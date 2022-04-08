@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F55875372800E9A3002F58E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875362800E9A3002F58E0 /* AppDelegate.swift */; };
+		F55875392800E9A3002F58E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875382800E9A3002F58E0 /* SceneDelegate.swift */; };
+		F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F558753F2800E9A3002F58E0 /* GoodMorning.xcdatamodeld */; };
+		F55875432800E9A5002F58E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55875422800E9A5002F58E0 /* Assets.xcassets */; };
+		F55875462800E9A5002F58E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55875442800E9A5002F58E0 /* LaunchScreen.storyboard */; };
+		F55875512800E9DA002F58E0 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558754E2800E9DA002F58E0 /* NetworkErrors.swift */; };
+		F55875522800E9DA002F58E0 /* WeatherRawDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558754F2800E9DA002F58E0 /* WeatherRawDataModel.swift */; };
+		F55875532800E9DA002F58E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875502800E9DA002F58E0 /* NetworkService.swift */; };
+		F55875582800E9F4002F58E0 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875552800E9F4002F58E0 /* UIFont+Extension.swift */; };
+		F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875562800E9F4002F58E0 /* UIColor+Extension.swift */; };
+		F558755A2800E9F4002F58E0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875572800E9F4002F58E0 /* Array+Extension.swift */; };
+		F558755F2800EA2A002F58E0 /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558755D2800EA2A002F58E0 /* LocationError.swift */; };
+		F55875602800EA2A002F58E0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558755E2800EA2A002F58E0 /* LocationManager.swift */; };
+		F55875652800EA37002F58E0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875612800EA37002F58E0 /* Router.swift */; };
+		F55875662800EA37002F58E0 /* NetworkCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875622800EA37002F58E0 /* NetworkCore.swift */; };
+		F55875672800EA37002F58E0 /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875632800EA37002F58E0 /* DataConverter.swift */; };
+		F55875682800EA37002F58E0 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875642800EA37002F58E0 /* ModuleBuilder.swift */; };
+		F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */; };
+		F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756B2800EA57002F58E0 /* ClothesPickView.swift */; };
+		F55875702800EA57002F58E0 /* ClotherSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756C2800EA57002F58E0 /* ClotherSetupView.swift */; };
+		F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */; };
+		F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */; };
+		F55875782800EA8D002F58E0 /* СlothesStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875752800EA8D002F58E0 /* СlothesStorageView.swift */; };
+		F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */; };
+		F55875802800EABC002F58E0 /* ClothesHeads.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757B2800EABC002F58E0 /* ClothesHeads.swift */; };
+		F55875812800EABC002F58E0 /* ClothesShoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757C2800EABC002F58E0 /* ClothesShoes.swift */; };
+		F55875822800EABC002F58E0 /* ClothesPants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757D2800EABC002F58E0 /* ClothesPants.swift */; };
+		F55875832800EABC002F58E0 /* ClothesTors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757E2800EABC002F58E0 /* ClothesTors.swift */; };
+		F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */; };
+		F55875862800EAD5002F58E0 /* СlothesStoragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */; };
+		F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875892800EB12002F58E0 /* StartScreenView.swift */; };
+		F558758D2800EB12002F58E0 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758A2800EB12002F58E0 /* WeatherImageView.swift */; };
+		F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758B2800EB12002F58E0 /* WeatherView.swift */; };
+		F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */; };
+		F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */; };
+		F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875942800EB4A002F58E0 /* SettingModel.swift */; };
+		F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875952800EB4A002F58E0 /* SettingPresenter.swift */; };
+		F55875992800EB4A002F58E0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875962800EB4A002F58E0 /* SettingView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F55875332800E9A3002F58E0 /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55875362800E9A3002F58E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F55875382800E9A3002F58E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F55875402800E9A3002F58E0 /* GoodMorning.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodMorning.xcdatamodel; sourceTree = "<group>"; };
+		F55875422800E9A5002F58E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55875452800E9A5002F58E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F55875472800E9A5002F58E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F558754E2800E9DA002F58E0 /* NetworkErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		F558754F2800E9DA002F58E0 /* WeatherRawDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRawDataModel.swift; sourceTree = "<group>"; };
+		F55875502800E9DA002F58E0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F55875552800E9F4002F58E0 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		F55875562800E9F4002F58E0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F55875572800E9F4002F58E0 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		F558755D2800EA2A002F58E0 /* LocationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		F558755E2800EA2A002F58E0 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F55875612800EA37002F58E0 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F55875622800EA37002F58E0 /* NetworkCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCore.swift; sourceTree = "<group>"; };
+		F55875632800EA37002F58E0 /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		F55875642800EA37002F58E0 /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupPresenter.swift; sourceTree = "<group>"; };
+		F558756B2800EA57002F58E0 /* ClothesPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesPickView.swift; sourceTree = "<group>"; };
+		F558756C2800EA57002F58E0 /* ClotherSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupView.swift; sourceTree = "<group>"; };
+		F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupViewModel.swift; sourceTree = "<group>"; };
+		F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherCollectionViewCell.swift; sourceTree = "<group>"; };
+		F55875752800EA8D002F58E0 /* СlothesStorageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageView.swift"; sourceTree = "<group>"; };
+		F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
+		F558757B2800EABC002F58E0 /* ClothesHeads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesHeads.swift; sourceTree = "<group>"; };
+		F558757C2800EABC002F58E0 /* ClothesShoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesShoes.swift; sourceTree = "<group>"; };
+		F558757D2800EABC002F58E0 /* ClothesPants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesPants.swift; sourceTree = "<group>"; };
+		F558757E2800EABC002F58E0 /* ClothesTors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesTors.swift; sourceTree = "<group>"; };
+		F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageViewModel.swift"; sourceTree = "<group>"; };
+		F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStoragePresenter.swift"; sourceTree = "<group>"; };
+		F55875892800EB12002F58E0 /* StartScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		F558758A2800EB12002F58E0 /* WeatherImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
+		F558758B2800EB12002F58E0 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenPresenter.swift; sourceTree = "<group>"; };
+		F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		F55875942800EB4A002F58E0 /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		F55875952800EB4A002F58E0 /* SettingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		F55875962800EB4A002F58E0 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F55875302800E9A3002F58E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F558752A2800E9A3002F58E0 = {
+			isa = PBXGroup;
+			children = (
+				F55875352800E9A3002F58E0 /* GoodMorning */,
+				F55875342800E9A3002F58E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F55875342800E9A3002F58E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F55875332800E9A3002F58E0 /* GoodMorning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F55875352800E9A3002F58E0 /* GoodMorning */ = {
+			isa = PBXGroup;
+			children = (
+				F55875362800E9A3002F58E0 /* AppDelegate.swift */,
+				F55875382800E9A3002F58E0 /* SceneDelegate.swift */,
+				F55875932800EB2C002F58E0 /* SettingModule */,
+				F55875872800EAE0002F58E0 /* StartScreenModule */,
+				F55875722800EA6D002F58E0 /* СlothesStorageModule */,
+				F55875692800EA46002F58E0 /* ClothesSetupModule */,
+				F558755C2800EA1F002F58E0 /* LocationManager */,
+				F558755B2800EA08002F58E0 /* CoreLayer */,
+				F55875542800E9E8002F58E0 /* Utility */,
+				F558754D2800E9CB002F58E0 /* NetworkService */,
+				F55875422800E9A5002F58E0 /* Assets.xcassets */,
+				F55875442800E9A5002F58E0 /* LaunchScreen.storyboard */,
+				F55875472800E9A5002F58E0 /* Info.plist */,
+				F558753F2800E9A3002F58E0 /* GoodMorning.xcdatamodeld */,
+			);
+			path = GoodMorning;
+			sourceTree = "<group>";
+		};
+		F558754D2800E9CB002F58E0 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F558754E2800E9DA002F58E0 /* NetworkErrors.swift */,
+				F55875502800E9DA002F58E0 /* NetworkService.swift */,
+				F558754F2800E9DA002F58E0 /* WeatherRawDataModel.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F55875542800E9E8002F58E0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F55875572800E9F4002F58E0 /* Array+Extension.swift */,
+				F55875562800E9F4002F58E0 /* UIColor+Extension.swift */,
+				F55875552800E9F4002F58E0 /* UIFont+Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F558755B2800EA08002F58E0 /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F55875632800EA37002F58E0 /* DataConverter.swift */,
+				F55875642800EA37002F58E0 /* ModuleBuilder.swift */,
+				F55875622800EA37002F58E0 /* NetworkCore.swift */,
+				F55875612800EA37002F58E0 /* Router.swift */,
+			);
+			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		F558755C2800EA1F002F58E0 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				F558755D2800EA2A002F58E0 /* LocationError.swift */,
+				F558755E2800EA2A002F58E0 /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		F55875692800EA46002F58E0 /* ClothesSetupModule */ = {
+			isa = PBXGroup;
+			children = (
+				F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */,
+				F558756C2800EA57002F58E0 /* ClotherSetupView.swift */,
+				F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */,
+				F558756B2800EA57002F58E0 /* ClothesPickView.swift */,
+			);
+			path = ClothesSetupModule;
+			sourceTree = "<group>";
+		};
+		F55875722800EA6D002F58E0 /* СlothesStorageModule */ = {
+			isa = PBXGroup;
+			children = (
+				F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */,
+				F558757A2800EA98002F58E0 /* ClothesStorageViewModel */,
+				F55875732800EA79002F58E0 /* ClothesStorageView */,
+			);
+			path = "СlothesStorageModule";
+			sourceTree = "<group>";
+		};
+		F55875732800EA79002F58E0 /* ClothesStorageView */ = {
+			isa = PBXGroup;
+			children = (
+				F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */,
+				F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */,
+				F55875752800EA8D002F58E0 /* СlothesStorageView.swift */,
+			);
+			path = ClothesStorageView;
+			sourceTree = "<group>";
+		};
+		F558757A2800EA98002F58E0 /* ClothesStorageViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F558757B2800EABC002F58E0 /* ClothesHeads.swift */,
+				F558757D2800EABC002F58E0 /* ClothesPants.swift */,
+				F558757C2800EABC002F58E0 /* ClothesShoes.swift */,
+				F558757E2800EABC002F58E0 /* ClothesTors.swift */,
+				F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */,
+			);
+			path = ClothesStorageViewModel;
+			sourceTree = "<group>";
+		};
+		F55875872800EAE0002F58E0 /* StartScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */,
+				F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */,
+				F55875882800EAEA002F58E0 /* StartScreenViewModule */,
+			);
+			path = StartScreenModule;
+			sourceTree = "<group>";
+		};
+		F55875882800EAEA002F58E0 /* StartScreenViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				F55875892800EB12002F58E0 /* StartScreenView.swift */,
+				F558758A2800EB12002F58E0 /* WeatherImageView.swift */,
+				F558758B2800EB12002F58E0 /* WeatherView.swift */,
+			);
+			path = StartScreenViewModule;
+			sourceTree = "<group>";
+		};
+		F55875932800EB2C002F58E0 /* SettingModule */ = {
+			isa = PBXGroup;
+			children = (
+				F55875942800EB4A002F58E0 /* SettingModel.swift */,
+				F55875952800EB4A002F58E0 /* SettingPresenter.swift */,
+				F55875962800EB4A002F58E0 /* SettingView.swift */,
+			);
+			path = SettingModule;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F55875322800E9A3002F58E0 /* GoodMorning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F558754A2800E9A5002F58E0 /* Build configuration list for PBXNativeTarget "GoodMorning" */;
+			buildPhases = (
+				F558752F2800E9A3002F58E0 /* Sources */,
+				F55875302800E9A3002F58E0 /* Frameworks */,
+				F55875312800E9A3002F58E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodMorning;
+			productName = GoodMorning;
+			productReference = F55875332800E9A3002F58E0 /* GoodMorning.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F558752B2800E9A3002F58E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					F55875322800E9A3002F58E0 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = F558752E2800E9A3002F58E0 /* Build configuration list for PBXProject "GoodMorning" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F558752A2800E9A3002F58E0;
+			productRefGroup = F55875342800E9A3002F58E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F55875322800E9A3002F58E0 /* GoodMorning */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F55875312800E9A3002F58E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55875462800E9A5002F58E0 /* LaunchScreen.storyboard in Resources */,
+				F55875432800E9A5002F58E0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F558752F2800E9A3002F58E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */,
+				F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */,
+				F55875812800EABC002F58E0 /* ClothesShoes.swift in Sources */,
+				F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */,
+				F55875822800EABC002F58E0 /* ClothesPants.swift in Sources */,
+				F55875582800E9F4002F58E0 /* UIFont+Extension.swift in Sources */,
+				F55875522800E9DA002F58E0 /* WeatherRawDataModel.swift in Sources */,
+				F55875372800E9A3002F58E0 /* AppDelegate.swift in Sources */,
+				F55875662800EA37002F58E0 /* NetworkCore.swift in Sources */,
+				F55875602800EA2A002F58E0 /* LocationManager.swift in Sources */,
+				F55875862800EAD5002F58E0 /* СlothesStoragePresenter.swift in Sources */,
+				F55875652800EA37002F58E0 /* Router.swift in Sources */,
+				F55875782800EA8D002F58E0 /* СlothesStorageView.swift in Sources */,
+				F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */,
+				F558758D2800EB12002F58E0 /* WeatherImageView.swift in Sources */,
+				F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */,
+				F558755A2800E9F4002F58E0 /* Array+Extension.swift in Sources */,
+				F55875512800E9DA002F58E0 /* NetworkErrors.swift in Sources */,
+				F55875682800EA37002F58E0 /* ModuleBuilder.swift in Sources */,
+				F55875672800EA37002F58E0 /* DataConverter.swift in Sources */,
+				F55875392800E9A3002F58E0 /* SceneDelegate.swift in Sources */,
+				F55875992800EB4A002F58E0 /* SettingView.swift in Sources */,
+				F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */,
+				F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */,
+				F55875532800E9DA002F58E0 /* NetworkService.swift in Sources */,
+				F558755F2800EA2A002F58E0 /* LocationError.swift in Sources */,
+				F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */,
+				F55875702800EA57002F58E0 /* ClotherSetupView.swift in Sources */,
+				F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */,
+				F55875832800EABC002F58E0 /* ClothesTors.swift in Sources */,
+				F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */,
+				F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */,
+				F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */,
+				F55875802800EABC002F58E0 /* ClothesHeads.swift in Sources */,
+				F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */,
+				F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F55875442800E9A5002F58E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55875452800E9A5002F58E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F55875482800E9A5002F58E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F55875492800E9A5002F58E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F558754B2800E9A5002F58E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G744H27D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nikita-Chirukhin.GoodMorning";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F558754C2800E9A5002F58E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G744H27D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nikita-Chirukhin.GoodMorning";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F558752E2800E9A3002F58E0 /* Build configuration list for PBXProject "GoodMorning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55875482800E9A5002F58E0 /* Debug */,
+				F55875492800E9A5002F58E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F558754A2800E9A5002F58E0 /* Build configuration list for PBXNativeTarget "GoodMorning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F558754B2800E9A5002F58E0 /* Debug */,
+				F558754C2800E9A5002F58E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F558753F2800E9A3002F58E0 /* GoodMorning.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F55875402800E9A3002F58E0 /* GoodMorning.xcdatamodel */,
+			);
+			currentVersion = F55875402800E9A3002F58E0 /* GoodMorning.xcdatamodel */;
+			path = GoodMorning.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F558752B2800E9A3002F58E0 /* Project object */;
+}

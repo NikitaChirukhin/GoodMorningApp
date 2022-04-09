@@ -26,10 +26,10 @@
 		F55875682800EA37002F58E0 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875642800EA37002F58E0 /* ModuleBuilder.swift */; };
 		F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */; };
 		F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756B2800EA57002F58E0 /* ClothesPickView.swift */; };
-		F55875702800EA57002F58E0 /* ClotherSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756C2800EA57002F58E0 /* ClotherSetupView.swift */; };
+		F55875702800EA57002F58E0 /* ClotherSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */; };
 		F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */; };
 		F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */; };
-		F55875782800EA8D002F58E0 /* СlothesStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875752800EA8D002F58E0 /* СlothesStorageView.swift */; };
+		F55875782800EA8D002F58E0 /* СlothesStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875752800EA8D002F58E0 /* СlothesStorageViewController.swift */; };
 		F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */; };
 		F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757B2800EABC002F58E0 /* ClothesItem.swift */; };
 		F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */; };
@@ -39,10 +39,8 @@
 		F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758B2800EB12002F58E0 /* WeatherView.swift */; };
 		F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */; };
 		F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */; };
-		F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875942800EB4A002F58E0 /* SettingModel.swift */; };
-		F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875952800EB4A002F58E0 /* SettingPresenter.swift */; };
-		F55875992800EB4A002F58E0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875962800EB4A002F58E0 /* SettingView.swift */; };
 		F558759C2801794D002F58E0 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558759B2801794D002F58E0 /* CoreData.swift */; };
+		F558759E2801A1A5002F58E0 /* ColorsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,10 +65,10 @@
 		F55875642800EA37002F58E0 /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupPresenter.swift; sourceTree = "<group>"; };
 		F558756B2800EA57002F58E0 /* ClothesPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesPickView.swift; sourceTree = "<group>"; };
-		F558756C2800EA57002F58E0 /* ClotherSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupView.swift; sourceTree = "<group>"; };
+		F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupViewController.swift; sourceTree = "<group>"; };
 		F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupViewModel.swift; sourceTree = "<group>"; };
 		F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherCollectionViewCell.swift; sourceTree = "<group>"; };
-		F55875752800EA8D002F58E0 /* СlothesStorageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageView.swift"; sourceTree = "<group>"; };
+		F55875752800EA8D002F58E0 /* СlothesStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageViewController.swift"; sourceTree = "<group>"; };
 		F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
 		F558757B2800EABC002F58E0 /* ClothesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesItem.swift; sourceTree = "<group>"; };
 		F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageViewModel.swift"; sourceTree = "<group>"; };
@@ -80,10 +78,8 @@
 		F558758B2800EB12002F58E0 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenPresenter.swift; sourceTree = "<group>"; };
 		F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
-		F55875942800EB4A002F58E0 /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
-		F55875952800EB4A002F58E0 /* SettingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
-		F55875962800EB4A002F58E0 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F558759B2801794D002F58E0 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsPickerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +114,6 @@
 			children = (
 				F55875362800E9A3002F58E0 /* AppDelegate.swift */,
 				F55875382800E9A3002F58E0 /* SceneDelegate.swift */,
-				F55875932800EB2C002F58E0 /* SettingModule */,
 				F55875872800EAE0002F58E0 /* StartScreenModule */,
 				F55875722800EA6D002F58E0 /* СlothesStorageModule */,
 				F55875692800EA46002F58E0 /* ClothesSetupModule */,
@@ -179,9 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */,
-				F558756C2800EA57002F58E0 /* ClotherSetupView.swift */,
-				F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */,
-				F558756B2800EA57002F58E0 /* ClothesPickView.swift */,
+				F55875A02801A214002F58E0 /* ClothesSetupView */,
+				F558759F2801A1FB002F58E0 /* ClotherSetupViewModel */,
 			);
 			path = ClothesSetupModule;
 			sourceTree = "<group>";
@@ -201,7 +195,7 @@
 			children = (
 				F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */,
 				F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */,
-				F55875752800EA8D002F58E0 /* СlothesStorageView.swift */,
+				F55875752800EA8D002F58E0 /* СlothesStorageViewController.swift */,
 			);
 			path = ClothesStorageView;
 			sourceTree = "<group>";
@@ -235,22 +229,30 @@
 			path = StartScreenViewModule;
 			sourceTree = "<group>";
 		};
-		F55875932800EB2C002F58E0 /* SettingModule */ = {
-			isa = PBXGroup;
-			children = (
-				F55875942800EB4A002F58E0 /* SettingModel.swift */,
-				F55875952800EB4A002F58E0 /* SettingPresenter.swift */,
-				F55875962800EB4A002F58E0 /* SettingView.swift */,
-			);
-			path = SettingModule;
-			sourceTree = "<group>";
-		};
 		F558759A2801792F002F58E0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				F558759B2801794D002F58E0 /* CoreData.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F558759F2801A1FB002F58E0 /* ClotherSetupViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */,
+				F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */,
+			);
+			path = ClotherSetupViewModel;
+			sourceTree = "<group>";
+		};
+		F55875A02801A214002F58E0 /* ClothesSetupView */ = {
+			isa = PBXGroup;
+			children = (
+				F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */,
+				F558756B2800EA57002F58E0 /* ClothesPickView.swift */,
+			);
+			path = ClothesSetupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */,
 				F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */,
 				F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */,
 				F55875582800E9F4002F58E0 /* UIFont+Extension.swift in Sources */,
@@ -333,7 +334,7 @@
 				F55875602800EA2A002F58E0 /* LocationManager.swift in Sources */,
 				F55875862800EAD5002F58E0 /* СlothesStoragePresenter.swift in Sources */,
 				F55875652800EA37002F58E0 /* Router.swift in Sources */,
-				F55875782800EA8D002F58E0 /* СlothesStorageView.swift in Sources */,
+				F55875782800EA8D002F58E0 /* СlothesStorageViewController.swift in Sources */,
 				F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */,
 				F558758D2800EB12002F58E0 /* WeatherImageView.swift in Sources */,
 				F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */,
@@ -342,18 +343,17 @@
 				F55875682800EA37002F58E0 /* ModuleBuilder.swift in Sources */,
 				F55875672800EA37002F58E0 /* DataConverter.swift in Sources */,
 				F55875392800E9A3002F58E0 /* SceneDelegate.swift in Sources */,
-				F55875992800EB4A002F58E0 /* SettingView.swift in Sources */,
+				F558759E2801A1A5002F58E0 /* ColorsPickerViewModel.swift in Sources */,
 				F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */,
 				F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */,
 				F55875532800E9DA002F58E0 /* NetworkService.swift in Sources */,
 				F558755F2800EA2A002F58E0 /* LocationError.swift in Sources */,
 				F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */,
 				F558759C2801794D002F58E0 /* CoreData.swift in Sources */,
-				F55875702800EA57002F58E0 /* ClotherSetupView.swift in Sources */,
+				F55875702800EA57002F58E0 /* ClotherSetupViewController.swift in Sources */,
 				F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */,
 				F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */,
 				F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */,
-				F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */,
 				F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */,
 				F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */,
 				F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */,

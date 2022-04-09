@@ -47,7 +47,7 @@ private extension StartScreenView {
             weatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             weatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            weatherView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -UIScreen.main.bounds.height / 5)
+            weatherView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
     

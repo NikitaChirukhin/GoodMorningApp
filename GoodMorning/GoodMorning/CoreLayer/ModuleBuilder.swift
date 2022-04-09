@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModuleBuilderProtocol: AnyObject {
     func createTabBar() -> UITabBarController
-    func createClothesSetupModule(router: Router) -> UIViewController
+    func createClothesSetupModule(router: Router, item: ClothesItem) -> UIViewController
 }
 
 final class ModuleBuilder: ModuleBuilderProtocol {
@@ -42,12 +42,6 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         view.startScreenPresenter = presenter
         return navController
     }
-    
-    private func createSettingView(navigationTitle: String, navigationImage: UIImage?) -> UIViewController {
-        let viewController = SettingView()
-        let navController = createNavigationController(controller: viewController, title: navigationTitle, image: navigationImage)
-        return navController
-    }
 }
 
 //MARK: - ModuleBuilderProtocol methods
@@ -60,16 +54,16 @@ extension ModuleBuilder {
                                                     navigationImage: UIImage(systemName: "house"))
         let clothesStorageView = createClothesStorageView(navigationTitle: "Storage",
                                                           navigationImage: UIImage(systemName: "bag"))
-        let settingView = createSettingView(navigationTitle: "Setting",
-                                            navigationImage: UIImage(systemName: "gearshape"))
         
-        tabBarController.viewControllers = [startScreenView, clothesStorageView, settingView]
+        tabBarController.viewControllers = [startScreenView, clothesStorageView]
         tabBarController.tabBar.tintColor = .black
         return tabBarController
     }
     
-    func createClothesSetupModule(router: Router) -> UIViewController {
-        let view = ClotherSetupView()
+    func createClothesSetupModule(router: Router, item: ClothesItem) -> UIViewController {
+        let view = ClotherSetupViewController()
+        let presenter = ClotherSetupPresenter(router: router, item: item, view: view)
+        view.presenter = presenter
         return view
     }
 }

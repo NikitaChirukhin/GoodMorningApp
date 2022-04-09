@@ -20,8 +20,9 @@ final class СlothesStoragePresenter {
     private weak var clothesStorageView: СlothesStorageViewProtocol?
     private let router: RouterProtocol
 //    private var clothesStorageViewModel: СlothesStorageViewModel
+    private var
     
-    init(view: СlothesStorageViewProtocol, router: RouterProtocol) {
+    init(view: СlothesStorageViewProtocol, router: RouterProtocol, coreData: CoreData) {
         self.router = router
         self.clothesStorageView = view
 //        self.clothesStorageViewModel =
@@ -36,6 +37,6 @@ private extension СlothesStoragePresenter {
 //MARK: - СlothesStoragePresenterProtocol methods
 extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
     func navigationAddButtonTap() {
-        router.pushClothesSetupModule()
+        router.pushClothesSetupModule(item: ClothesItem(name: "", color: "Green", type: 1, picture: "hat", temperature: "-23"))
     }
 }

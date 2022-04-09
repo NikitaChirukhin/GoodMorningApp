@@ -15,6 +15,10 @@ final class ClothesPickView: UIView {
     
     weak var delegate: ClothesPickViewDelegate?
     
+    private let screenWidth = Int(UIScreen.main.bounds.width)
+    
+    private var key: String
+    
     var isSelected: Bool = false {
         didSet {
             isSelected ? viewSelected() : viewUnSelected()
@@ -22,14 +26,16 @@ final class ClothesPickView: UIView {
     }
     
     private lazy var layerView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.tintColor = .systemBlue
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     init(pictureName: String) {
-        super.init(frame: .zero)
+        key = pictureName
         
+        super.init(frame: .zero)
+
         layerView.image = UIImage(named: pictureName)
         clickable()
         setupView()
@@ -44,26 +50,23 @@ final class ClothesPickView: UIView {
 private extension ClothesPickView {
     func setupView() {
         layer.cornerRadius = 12
-        backgroundColor = .systemGray
+        backgroundColor = .secondarySystemFill
         addSubview(layerView)
         translatesAutoresizingMaskIntoConstraints = false
         
-        layerView.frame = CGRect(x: bounds.maxX + 10,
-                                 y: bounds.midY + 10,
-                                 width: 30,
-                                 height: 30)
+        layerView.frame = CGRect(x: 0,
+                                 y: 0,
+                                 width: (screenWidth - 40 - 30) / 4,
+                                 height: (screenWidth - 40 - 30) / 4)
     }
     
     func viewSelected() {
-        tintColor = .green
         layer.borderWidth = 2
-        layer.borderColor = .init(red: 0, green: 1, blue: 0, alpha: 1)
-        layerView.tintColor = .systemGreen
+        layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func viewUnSelected() {
         layer.borderWidth = 0
-        layerView.tintColor = .systemBlue
     }
     
     func clickable() {
@@ -72,6 +75,6 @@ private extension ClothesPickView {
         addGestureRecognizer(tap)
     }
     @objc func selected() {
-        delegate?.clothesViewPicked(imageName: "HZ")
+        delegate?.clothesViewPicked(imageName: key)
     }
 }

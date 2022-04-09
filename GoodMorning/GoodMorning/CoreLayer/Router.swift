@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RouterProtocol {
-    func pushClothesSetupModule()
+    func pushClothesSetupModule(item: ClothesItem)
 }
 
 final class Router {
@@ -16,8 +16,8 @@ final class Router {
     private let navigationController: UINavigationController
     private let moduleBuilder: ModuleBuilder?
 
-    func pushClothesSetupModule() {
-        guard let clothesSetupView = moduleBuilder?.createClothesSetupModule(router: self) else { return }
+    func pushClothesSetupModule(item: ClothesItem) {
+        guard let clothesSetupView = moduleBuilder?.createClothesSetupModule(router: self, item: item) else { return }
         navigationController.pushViewController(clothesSetupView, animated: true)
     }
     

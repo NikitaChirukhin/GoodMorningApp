@@ -8,18 +8,42 @@
 import CoreData
 import UIKit
 
-final class CoreData {
-    private var objects: [NSManagedObject] = []
+protocol CoreDataProtocol {
+    func save(object: ClothesItem)
+    func getItems()
 }
 
-extension CoreData {
+final class CoreData {
+    var objects: [NSManagedObject] = []
+}
+
+extension CoreData: CoreDataProtocol {
     
     func save(object: ClothesItem) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "MO", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: "MOClothesItem", in: managedContext)!
         let item = NSManagedObject(entity: entity, insertInto: managedContext)
-        item.setValue(object, forKey: "")
+        item.setValue(object, forKey: "name")
+        
+        do {
+            try managedContext.save()
+            objects.append(item)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func getItems() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MOClothesItem")
+        do {
+            objects = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 }

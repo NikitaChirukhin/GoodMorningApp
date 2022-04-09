@@ -23,7 +23,6 @@ final class StartScreenPresenter {
     private weak var startScreenView: StartScreenViewProtocol?
     private let netwotkService: NetworkServiceProtocol
     private let router: RouterProtocol
-    
     private let locationManager: LocationManager
     
     init(networkService: NetworkServiceProtocol, view: StartScreenViewProtocol, router: RouterProtocol, locationManager: LocationManager) {

@@ -26,7 +26,8 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         let view = СlothesStorageView()
         let navController = createNavigationController(controller: view, title: navigationTitle, image: navigationImage)
         let router = Router(navigationController: navController, moduleBuilder: self)
-        let presenter = СlothesStoragePresenter(view: view, router: router)
+        let coreData = CoreData()
+        let presenter = СlothesStoragePresenter(view: view, router: router, coreData: coreData)
         view.presenter = presenter
         return navController
     }

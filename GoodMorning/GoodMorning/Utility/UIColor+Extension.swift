@@ -9,6 +9,6 @@ import UIKit
 
 extension UIColor {
     public class var whiteText: UIColor {
-        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.3)
+        UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.3)
     }
 }

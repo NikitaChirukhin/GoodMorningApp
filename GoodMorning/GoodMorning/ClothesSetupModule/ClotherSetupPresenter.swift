@@ -12,9 +12,6 @@ protocol ClothesSetupViewProtocol: UIViewController {
 }
 
 protocol ClotherSetupPresenterProtocol {
-    func temperatureRange() -> [Int]
-    func colorsViews() -> [ColorPickerViewModel]
-    func pickViewNames() -> [String]
     func setColor() -> String
     func setType() -> Int
     func setTemperature() -> Int
@@ -29,7 +26,7 @@ final class ClotherSetupPresenter {
     init(router: Router, item: ClothesItem, view: ClothesSetupViewProtocol) {
         self.clothesSetupView = view
         self.router = router
-        self.clothesViewModel = ClotherSetupViewModel(item: item)
+        self.clothesViewModel = ClotherSetupViewModel(clothes: item)
     }
 }
 
@@ -39,17 +36,6 @@ private extension ClotherSetupPresenter {
 }
 
 extension ClotherSetupPresenter: ClotherSetupPresenterProtocol {
-    func pickViewNames() -> [String] {
-        clothesViewModel.clotherPickViewNames
-    }
-    
-    func temperatureRange() -> [Int] {
-        clothesViewModel.temperatureRange
-    }
-    
-    func colorsViews() -> [ColorPickerViewModel] {
-        clothesViewModel.colors
-    }
     
     func setColor() -> String {
         "1"

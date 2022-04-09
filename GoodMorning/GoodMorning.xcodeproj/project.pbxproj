@@ -41,6 +41,9 @@
 		F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */; };
 		F558759C2801794D002F58E0 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558759B2801794D002F58E0 /* CoreData.swift */; };
 		F558759E2801A1A5002F58E0 /* ColorsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */; };
+		F563C25C2801F1040024F8F0 /* ClothesImageSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25B2801F1040024F8F0 /* ClothesImageSetupView.swift */; };
+		F563C25E2801F2710024F8F0 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25D2801F2710024F8F0 /* CGFloat+Extension.swift */; };
+		F563C2602801FDD50024F8F0 /* ClothesImageSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25F2801FDD50024F8F0 /* ClothesImageSetupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		F55875912800EB1E002F58E0 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
 		F558759B2801794D002F58E0 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsPickerViewModel.swift; sourceTree = "<group>"; };
+		F563C25B2801F1040024F8F0 /* ClothesImageSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageSetupView.swift; sourceTree = "<group>"; };
+		F563C25D2801F2710024F8F0 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		F563C25F2801FDD50024F8F0 /* ClothesImageSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageSetupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F55875572800E9F4002F58E0 /* Array+Extension.swift */,
+				F563C25D2801F2710024F8F0 /* CGFloat+Extension.swift */,
 				F55875562800E9F4002F58E0 /* UIColor+Extension.swift */,
 				F55875552800E9F4002F58E0 /* UIFont+Extension.swift */,
 			);
@@ -240,6 +247,7 @@
 		F558759F2801A1FB002F58E0 /* ClotherSetupViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F563C25F2801FDD50024F8F0 /* ClothesImageSetupViewModel.swift */,
 				F558759D2801A1A5002F58E0 /* ColorsPickerViewModel.swift */,
 				F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */,
 			);
@@ -250,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */,
+				F563C25B2801F1040024F8F0 /* ClothesImageSetupView.swift */,
 				F558756B2800EA57002F58E0 /* ClothesPickView.swift */,
 			);
 			path = ClothesSetupView;
@@ -344,10 +353,12 @@
 				F55875672800EA37002F58E0 /* DataConverter.swift in Sources */,
 				F55875392800E9A3002F58E0 /* SceneDelegate.swift in Sources */,
 				F558759E2801A1A5002F58E0 /* ColorsPickerViewModel.swift in Sources */,
+				F563C25C2801F1040024F8F0 /* ClothesImageSetupView.swift in Sources */,
 				F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */,
 				F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */,
 				F55875532800E9DA002F58E0 /* NetworkService.swift in Sources */,
 				F558755F2800EA2A002F58E0 /* LocationError.swift in Sources */,
+				F563C25E2801F2710024F8F0 /* CGFloat+Extension.swift in Sources */,
 				F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */,
 				F558759C2801794D002F58E0 /* CoreData.swift in Sources */,
 				F55875702800EA57002F58E0 /* ClotherSetupViewController.swift in Sources */,
@@ -357,6 +368,7 @@
 				F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */,
 				F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */,
 				F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */,
+				F563C2602801FDD50024F8F0 /* ClothesImageSetupViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

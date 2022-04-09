@@ -20,7 +20,7 @@ final class СlothesStoragePresenter {
     private weak var clothesStorageView: СlothesStorageViewProtocol?
     private let router: RouterProtocol
 //    private var clothesStorageViewModel: СlothesStorageViewModel
-    private var
+//    private var
     
     init(view: СlothesStorageViewProtocol, router: RouterProtocol, coreData: CoreData) {
         self.router = router

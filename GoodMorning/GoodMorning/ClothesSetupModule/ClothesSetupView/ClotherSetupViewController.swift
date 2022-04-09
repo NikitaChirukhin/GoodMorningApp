@@ -11,204 +11,99 @@ final class ClotherSetupViewController: UIViewController {
     
     var presenter: ClotherSetupPresenterProtocol!
     
-    private let screenWidth = UIScreen.main.bounds.width
-    
-    private lazy var clothesImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
     }()
     
-    private lazy var clothesImageLayer: UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = screenWidth / 4
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
-    //MARK: - clotherPickerView setting
-    private var clotherPickViews: [ClothesPickView] = []
     
-    private lazy var stackClotherPickViews: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        return stackView
-    }()
-
-    //MARK: - Colors picker setting
-    private var colors: [ColorPickerViewModel] = []
+    private var clothesImageSetupView = ClothesImageSetupView()
     
-    private lazy var pickerColorView: UIPickerView = {
-        let pickedView = UIPickerView()
-        pickedView.translatesAutoresizingMaskIntoConstraints = false
-        pickedView.delegate = self
-        pickedView.dataSource = self
-        return pickedView
+    private lazy var nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "clothing name"
+        textField.textAlignment = .center
+        textField.backgroundColor = .secondarySystemBackground
+        textField.layer.cornerRadius = 10
+        return textField
     }()
     
-    private lazy var colorLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Color"
-        label.textAlignment = .center
-        return label
-    }()
-
-    //MARK: - Temperature picker setting
-    private lazy var temperatureRange: [Int] = []
-    
-    private lazy var pickerTemperatureView: UIPickerView = {
-        let pickedView = UIPickerView()
-        pickedView.translatesAutoresizingMaskIntoConstraints = false
-        pickedView.delegate = self
-        pickedView.dataSource = self
-        return pickedView
-    }()
-    
-    private lazy var temperatureLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "°C"
-        label.textAlignment = .center
-        return label
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Save", for: .normal)
+        button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .secondarySystemBackground
+        button.layer.cornerRadius = 8
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        colors = presenter.colorsViews()
-        temperatureRange = presenter.temperatureRange()
-        
-        setupView()
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        pickerTemperatureView.selectRow(temperatureRange.count / 2, inComponent: 0, animated: true)
+        setupView()
     }
 }
 
 //MARK: - ClotherSetupView private methods
 private extension ClotherSetupViewController {
     func setupView() {
+        
         view.backgroundColor = .systemBackground
-        view.addSubview(clothesImageLayer)
-        view.addSubview(clothesImage)
-        view.addSubview(stackClotherPickViews)
-  
-        view.addSubview(colorLabel)
-        view.addSubview(pickerColorView)
         
-        view.addSubview(temperatureLabel)
-        view.addSubview(pickerTemperatureView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
+        containerView.addSubview(clothesImageSetupView)
+        containerView.addSubview(nameTextField)
+        containerView.addSubview(saveButton)
         
-        for name in presenter.pickViewNames() {
-            clotherPickViews.append(setupClothesPickView(pictureName: name))
-        }
+        let clothesImageSetupViewHeigth = (.screenWidth / 2) - 40 + (.screenWidth - 40 - 30) / 4 + (.screenWidth - 40 - 30) / 2 + 150
+        let scrollViewHeigth = clothesImageSetupViewHeigth + 80 + 80 + 50
         
         NSLayoutConstraint.activate([
-            clothesImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            clothesImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: (screenWidth / 4) + 20),
-            clothesImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(screenWidth / 4) - 20),
-            clothesImage.heightAnchor.constraint(equalToConstant: (screenWidth / 2) - 40),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            clothesImageLayer.topAnchor.constraint(equalTo: clothesImage.topAnchor, constant: -20),
-            clothesImageLayer.leadingAnchor.constraint(equalTo: clothesImage.leadingAnchor, constant: -20),
-            clothesImageLayer.trailingAnchor.constraint(equalTo: clothesImage.trailingAnchor, constant: 20),
-            clothesImageLayer.bottomAnchor.constraint(equalTo: clothesImage.bottomAnchor, constant: 20),
+            containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            containerView.widthAnchor.constraint(equalToConstant: .screenWidth),
+            containerView.heightAnchor.constraint(equalToConstant: scrollViewHeigth),
             
-            stackClotherPickViews.topAnchor.constraint(equalTo: clothesImage.bottomAnchor, constant: 50),
-            stackClotherPickViews.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackClotherPickViews.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackClotherPickViews.heightAnchor.constraint(equalToConstant: (screenWidth - 40 - 30) / 4),
+            clothesImageSetupView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            clothesImageSetupView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            clothesImageSetupView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            clothesImageSetupView.heightAnchor.constraint(equalToConstant: clothesImageSetupViewHeigth),
             
-            pickerColorView.topAnchor.constraint(equalTo: stackClotherPickViews.bottomAnchor, constant: 65),
-            pickerColorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            pickerColorView.widthAnchor.constraint(equalToConstant: (screenWidth / 2) - 25),
-            pickerColorView.heightAnchor.constraint(equalToConstant: (screenWidth - 40 - 30) / 2),
-        
-            colorLabel.topAnchor.constraint(equalTo: pickerColorView.topAnchor, constant: -20),
-            colorLabel.leadingAnchor.constraint(equalTo: pickerColorView.leadingAnchor),
-            colorLabel.trailingAnchor.constraint(equalTo: pickerColorView.trailingAnchor),
-            colorLabel.heightAnchor.constraint(equalToConstant: 20),
+            nameTextField.topAnchor.constraint(equalTo: clothesImageSetupView.bottomAnchor, constant: 30),
+            nameTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 35),
+            nameTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -35),
+            nameTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            pickerTemperatureView.topAnchor.constraint(equalTo: stackClotherPickViews.bottomAnchor, constant: 65),
-            pickerTemperatureView.widthAnchor.constraint(equalToConstant: (screenWidth / 2) - 25),
-            pickerTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            pickerTemperatureView.heightAnchor.constraint(equalToConstant: (screenWidth - 40 - 30) / 2),
-            
-            temperatureLabel.topAnchor.constraint(equalTo: pickerTemperatureView.topAnchor, constant: -20),
-            temperatureLabel.leadingAnchor.constraint(equalTo: pickerTemperatureView.leadingAnchor),
-            temperatureLabel.trailingAnchor.constraint(equalTo: pickerTemperatureView.trailingAnchor),
-            temperatureLabel.heightAnchor.constraint(equalToConstant: 20),
+            saveButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 50),
+            saveButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: .screenWidth / 4 + 20),
+            saveButton.widthAnchor.constraint(equalToConstant: .screenWidth / 2 - 40),
+            saveButton.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
     
-    private func setupClothesPickView(pictureName: String) -> ClothesPickView {
-        let view = ClothesPickView(pictureName: pictureName)
-        stackClotherPickViews.addArrangedSubview(view)
-        view.delegate = self
-        return view
+    @objc func saveButtonTap() {
+        
     }
 }
 
 //MARK: - ClotherSetupViewProtocol methods
 extension ClotherSetupViewController: ClothesSetupViewProtocol {
     
-}
-
-
-extension ClotherSetupViewController: ClothesPickViewDelegate {
-    func clothesViewPicked(imageName: String) {
-        clothesImage.image = UIImage(named: imageName)
-        //TO DO: - isSelectedToModel
-        for i in 0...clotherPickViews.count - 1 {
-            clotherPickViews[i].isSelected = false
-        }
-        if let pickedViewIndex = presenter.pickViewNames().firstIndex(where: {$0 == imageName}) {
-            clotherPickViews[pickedViewIndex].isSelected = true
-        }
-    }
-}
-
-//MARK: - ClotherSetupViewController UIPickerViewDataSource methods
-extension ClotherSetupViewController: UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == pickerTemperatureView {
-            return temperatureRange.count
-        } else {
-            return colors.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == pickerTemperatureView {
-            return String(temperatureRange[row])
-        } else {
-            return colors[row].colorName
-        }
-    }
-}
-
-//MARK: - ClotherSetupViewController UIPickerViewDelegate methods
-extension ClotherSetupViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == pickerColorView {
-            clothesImageLayer.backgroundColor = colors[row].uiColor
-            if colors[row].colorName != "Clear" {
-                clothesImageLayer.layer.borderWidth = 0
-            } else {
-                clothesImageLayer.layer.borderWidth = 2
-            }
-        }
-    }
 }

@@ -32,7 +32,7 @@ final class StartScreenPresenter {
         self.startScreenView = view
         self.locationManager = locationManager
         
-        self.setupLocationManager()
+        setupLocationManager()
     }
 }
 
@@ -40,6 +40,7 @@ final class StartScreenPresenter {
 private extension StartScreenPresenter {
     func setupLocationManager() {
         locationManager.accessStatus()
+        print("Nikita")
     }
     
     func getWeatherData(longitudeAtribute: String, latitudeAtribute: String) {

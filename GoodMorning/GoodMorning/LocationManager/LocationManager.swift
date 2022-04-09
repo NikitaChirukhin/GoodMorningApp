@@ -42,7 +42,9 @@ extension LocationManager: LocationManagerProtocol {
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentLocation = locations.first
-        locationManager.stopUpdatingLocation()
+        if !locations.isEmpty {
+            currentLocation = locations.first
+            locationManager.stopUpdatingLocation()
+        }
     }
 }

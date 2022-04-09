@@ -31,10 +31,7 @@
 		F55875772800EA8D002F58E0 /* ClotherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */; };
 		F55875782800EA8D002F58E0 /* СlothesStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875752800EA8D002F58E0 /* СlothesStorageView.swift */; };
 		F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */; };
-		F55875802800EABC002F58E0 /* ClothesHeads.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757B2800EABC002F58E0 /* ClothesHeads.swift */; };
-		F55875812800EABC002F58E0 /* ClothesShoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757C2800EABC002F58E0 /* ClothesShoes.swift */; };
-		F55875822800EABC002F58E0 /* ClothesPants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757D2800EABC002F58E0 /* ClothesPants.swift */; };
-		F55875832800EABC002F58E0 /* ClothesTors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757E2800EABC002F58E0 /* ClothesTors.swift */; };
+		F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757B2800EABC002F58E0 /* ClothesItem.swift */; };
 		F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */; };
 		F55875862800EAD5002F58E0 /* СlothesStoragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */; };
 		F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875892800EB12002F58E0 /* StartScreenView.swift */; };
@@ -45,6 +42,7 @@
 		F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875942800EB4A002F58E0 /* SettingModel.swift */; };
 		F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875952800EB4A002F58E0 /* SettingPresenter.swift */; };
 		F55875992800EB4A002F58E0 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875962800EB4A002F58E0 /* SettingView.swift */; };
+		F558759C2801794D002F58E0 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558759B2801794D002F58E0 /* CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,10 +72,7 @@
 		F55875742800EA8D002F58E0 /* ClotherCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherCollectionViewCell.swift; sourceTree = "<group>"; };
 		F55875752800EA8D002F58E0 /* СlothesStorageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageView.swift"; sourceTree = "<group>"; };
 		F55875762800EA8D002F58E0 /* ClothesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesTableViewCell.swift; sourceTree = "<group>"; };
-		F558757B2800EABC002F58E0 /* ClothesHeads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesHeads.swift; sourceTree = "<group>"; };
-		F558757C2800EABC002F58E0 /* ClothesShoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesShoes.swift; sourceTree = "<group>"; };
-		F558757D2800EABC002F58E0 /* ClothesPants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesPants.swift; sourceTree = "<group>"; };
-		F558757E2800EABC002F58E0 /* ClothesTors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesTors.swift; sourceTree = "<group>"; };
+		F558757B2800EABC002F58E0 /* ClothesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesItem.swift; sourceTree = "<group>"; };
 		F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageViewModel.swift"; sourceTree = "<group>"; };
 		F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStoragePresenter.swift"; sourceTree = "<group>"; };
 		F55875892800EB12002F58E0 /* StartScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
@@ -88,6 +83,7 @@
 		F55875942800EB4A002F58E0 /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		F55875952800EB4A002F58E0 /* SettingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		F55875962800EB4A002F58E0 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F558759B2801794D002F58E0 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +125,7 @@
 				F558755C2800EA1F002F58E0 /* LocationManager */,
 				F558755B2800EA08002F58E0 /* CoreLayer */,
 				F55875542800E9E8002F58E0 /* Utility */,
+				F558759A2801792F002F58E0 /* CoreData */,
 				F558754D2800E9CB002F58E0 /* NetworkService */,
 				F55875422800E9A5002F58E0 /* Assets.xcassets */,
 				F55875442800E9A5002F58E0 /* LaunchScreen.storyboard */,
@@ -212,10 +209,7 @@
 		F558757A2800EA98002F58E0 /* ClothesStorageViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F558757B2800EABC002F58E0 /* ClothesHeads.swift */,
-				F558757D2800EABC002F58E0 /* ClothesPants.swift */,
-				F558757C2800EABC002F58E0 /* ClothesShoes.swift */,
-				F558757E2800EABC002F58E0 /* ClothesTors.swift */,
+				F558757B2800EABC002F58E0 /* ClothesItem.swift */,
 				F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */,
 			);
 			path = ClothesStorageViewModel;
@@ -249,6 +243,14 @@
 				F55875962800EB4A002F58E0 /* SettingView.swift */,
 			);
 			path = SettingModule;
+			sourceTree = "<group>";
+		};
+		F558759A2801792F002F58E0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F558759B2801794D002F58E0 /* CoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,9 +325,7 @@
 			files = (
 				F55875982800EB4A002F58E0 /* SettingPresenter.swift in Sources */,
 				F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */,
-				F55875812800EABC002F58E0 /* ClothesShoes.swift in Sources */,
 				F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */,
-				F55875822800EABC002F58E0 /* ClothesPants.swift in Sources */,
 				F55875582800E9F4002F58E0 /* UIFont+Extension.swift in Sources */,
 				F55875522800E9DA002F58E0 /* WeatherRawDataModel.swift in Sources */,
 				F55875372800E9A3002F58E0 /* AppDelegate.swift in Sources */,
@@ -348,13 +348,13 @@
 				F55875532800E9DA002F58E0 /* NetworkService.swift in Sources */,
 				F558755F2800EA2A002F58E0 /* LocationError.swift in Sources */,
 				F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */,
+				F558759C2801794D002F58E0 /* CoreData.swift in Sources */,
 				F55875702800EA57002F58E0 /* ClotherSetupView.swift in Sources */,
 				F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */,
-				F55875832800EABC002F58E0 /* ClothesTors.swift in Sources */,
 				F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */,
 				F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */,
 				F55875972800EB4A002F58E0 /* SettingModel.swift in Sources */,
-				F55875802800EABC002F58E0 /* ClothesHeads.swift in Sources */,
+				F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */,
 				F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */,
 				F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */,
 			);
@@ -498,6 +498,7 @@
 				DEVELOPMENT_TEAM = 9G744H27D6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Confirm to see weather in your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -526,6 +527,7 @@
 				DEVELOPMENT_TEAM = 9G744H27D6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Confirm to see weather in your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

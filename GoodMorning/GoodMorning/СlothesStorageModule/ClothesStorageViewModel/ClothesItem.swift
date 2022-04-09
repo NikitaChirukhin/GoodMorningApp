@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ClothesHeads: ClothesStorageModelProtocol {
+struct ClothesItem: ClothesStorageModelProtocol {
     var name: String
     
     var color: String?
@@ -17,10 +17,6 @@ struct ClothesHeads: ClothesStorageModelProtocol {
     var picture: String
     
     var temperature: String
-    
-    var headType: String?
-    
-    var id: Int
 }
 
 //extension ClothesHeads {
@@ -31,6 +27,5 @@ struct ClothesHeads: ClothesStorageModelProtocol {
 //        self.headType = clothesDTO.headType ?? ""
 //        self.picture = clothesDTO.picture ?? ""
 //        self.temperature = clothesDTO.temperature ?? ""
-//        self.id = Int(clothesDTO.id)
 //    }
 //}

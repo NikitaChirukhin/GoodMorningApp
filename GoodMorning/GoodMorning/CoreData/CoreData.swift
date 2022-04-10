@@ -10,7 +10,8 @@ import UIKit
 
 protocol CoreDataProtocol {
     func save(object: MOClothesItemModel)
-    func getItems() throws -> [MOClothesItem]
+    func deleteItem(item: MOClothesItemModel)
+    func getItems() throws -> [ClothesItem]
 }
 
 final class CoreData {
@@ -23,9 +24,6 @@ extension CoreData: CoreDataProtocol {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "MOClothesItem", in: managedContext)!
-//        let item = NSManagedObject(entity: entity, insertInto: managedContext)
-//        item.setValue(object, forKeyPath: "name")
 
         let item = MOClothesItem(context: managedContext)
         item.name = object.name
@@ -41,7 +39,41 @@ extension CoreData: CoreDataProtocol {
         }
     }
     
-    func getItems() throws -> [MOClothesItem] {
+    func getItems() throws -> [ClothesItem] {
+        var data: [ClothesItem] = []
+        do {
+            try fetchItem().forEach({ data.append(ClothesItem(with: $0)) })
+        } catch let error as NSError {
+            print(error)
+        }
+        return data
+    }
+    
+    func deleteItem(item object: MOClothesItemModel) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let deleteItem = MOClothesItem(context: managedContext)
+        deleteItem.name = object.name
+        deleteItem.temperature = object.temperature
+        deleteItem.color = object.color
+        deleteItem.type = object.type
+        deleteItem.picture = object.picture
+        
+        managedContext.delete(deleteItem)
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+}
+
+//MARK: - CoreData private methods
+private extension CoreData {
+    func fetchItem() throws -> [MOClothesItem] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { throw NetworkError.serverError }
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -54,9 +86,5 @@ extension CoreData: CoreDataProtocol {
             print("Could not save. \(error), \(error.userInfo)")
             throw error
         }
-    }
-    
-    func deleteItem(_ name: String) {
-        
     }
 }

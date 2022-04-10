@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class СlothesStorageView: UIViewController {
+final class СlothesStorageViewController: UIViewController {
     
     var presenter: СlothesStoragePresenterProtocol!
     
@@ -46,14 +46,14 @@ final class СlothesStorageView: UIViewController {
 }
 
 //MARK: - СlothesStorageViewProtocol Methods
-extension СlothesStorageView: СlothesStorageViewProtocol {
+extension СlothesStorageViewController: СlothesStorageViewProtocol {
     func success() {
         
     }
 }
 
 //MARK: - СlothesStorageView private Methods
-private extension СlothesStorageView {
+private extension СlothesStorageViewController {
     func setupСlothesStorageView() {
         view.addSubview(mainTableView)
         
@@ -73,17 +73,30 @@ private extension СlothesStorageView {
 }
 
 //MARK: - clothresStorageCollectionView UITableViewDelegate
-extension СlothesStorageView: UITableViewDelegate, UITableViewDataSource {
+extension СlothesStorageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ClothesTableViewCell.clotherTableViewIdentifier, for: indexPath) as? ClothesTableViewCell else { fatalError("Problem cell") }
+        cell.reloadData()
         cell.setData(data: presenter.clothesItemBykey(key: indexPath.row))
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         .screenWidth - 80
+    }
+}
+
+//MARK: - ClothesCollectionViewCell delegate methods
+extension СlothesStorageViewController: ClotherCollectionViewDelegate {
+    func deleteButtonTap(key: String) {
+        presenter.deleteButtonTap(key: key)
+    }
+    
+    func editButtonTap(key: String) {
+        presenter.editButtonTap(key: key)
     }
 }

@@ -7,13 +7,20 @@
 
 import UIKit
 
+protocol ClotherCollectionViewDelegate: AnyObject {
+    func deleteButtonTap(key: String)
+    func editButtonTap(key: String)
+}
+
 final class ClothesTableViewCell: UITableViewCell {
     
     static let clotherTableViewIdentifier = "headTableViewIdentifier"
     
     private var currentCell = 0
-    private let screenWidth = UIScreen.main.bounds.width
+    
     private var dataViewModel: [ColletionClothesViewModel] = []
+    
+    weak var delegate: ClotherCollectionViewDelegate?
     
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -36,6 +43,23 @@ final class ClothesTableViewCell: UITableViewCell {
         return collectionView
     }()
     
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(deleteButtonTap), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
+        button.tintColor = .red
+        return button
+    }()
+    
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(editButtonTap), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "pencil.circle"), for: .normal)
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -51,7 +75,8 @@ final class ClothesTableViewCell: UITableViewCell {
 private extension ClothesTableViewCell {
     func setupView() {
         contentView.addSubview(headCollectionView)
-
+        contentView.addSubview(deleteButton)
+        contentView.addSubview(editButton)
 
         selectionStyle = .none
         
@@ -60,7 +85,24 @@ private extension ClothesTableViewCell {
             headCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             headCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            deleteButton.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            deleteButton.widthAnchor.constraint(equalToConstant: 20),
+            deleteButton.heightAnchor.constraint(equalToConstant: 20),
+            
+            editButton.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            editButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            editButton.widthAnchor.constraint(equalToConstant: 20),
+            editButton.heightAnchor.constraint(equalToConstant: 20),
         ])
+    }
+    @objc func deleteButtonTap() {
+        delegate?.deleteButtonTap(key: dataViewModel[currentCell].name)
+    }
+    
+    @objc func editButtonTap() {
+        delegate?.editButtonTap(key: dataViewModel[currentCell].name)
     }
 }
 
@@ -72,7 +114,6 @@ extension ClothesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClotherCollectionViewCell.collectionIdentifier, for: indexPath) as? ClotherCollectionViewCell else { return .init() }
-        cell.delegate = self
         cell.setData(viewData: dataViewModel[indexPath.row])
         return cell
     }
@@ -85,39 +126,18 @@ extension ClothesTableViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if CGFloat(currentCell) * screenWidth  < scrollView.contentOffset.x {
-            currentCell += 1
-        } else {
-            currentCell -= 1
-        }
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if CGFloat(currentCell) * screenWidth < scrollView.contentOffset.x {
-            currentCell += 1
-        }
-    }
-}
-
-//MARK: - ClothesCollectionViewCell delegate methods
-extension ClothesTableViewCell: ClotherCollectionViewCellDelegate {
-    func leftScrollButtonTap() {
-        currentCell -= 1
-        let indexPath = NSIndexPath(row: currentCell, section: 0)
-        headCollectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredVertically, animated: true)
-        print(currentCell)
-    }
-    
-    func rigthScrollButtonTap() {
-        currentCell += 1
-        let indexPath = NSIndexPath(row: currentCell, section: 0)
-        headCollectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredVertically, animated: true)
-        print(currentCell)
+        currentCell = Int(scrollView.contentOffset.x / .screenWidth)
     }
 }
 
 extension ClothesTableViewCell {
     func setData(data: [ColletionClothesViewModel]) {
         dataViewModel = data
+        headCollectionView.reloadData()
+    }
+    
+    func reloadData() {
+        dataViewModel = []
+        headCollectionView.reloadData()
     }
 }

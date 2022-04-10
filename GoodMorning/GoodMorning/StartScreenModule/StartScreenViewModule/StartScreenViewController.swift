@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StartScreenView: UIViewController {
+final class StartScreenViewController: UIViewController {
 
     var startScreenPresenter: StartScreenPresenterProtocol!
     
@@ -40,7 +40,7 @@ final class StartScreenView: UIViewController {
 }
 
 //MARK: - StartScreenView privat Methods
-private extension StartScreenView {
+private extension StartScreenViewController {
     func setupView() {
         weatherView.delegate = self
         navigationItem.rightBarButtonItem = navigationCelsuisButton
@@ -75,7 +75,7 @@ private extension StartScreenView {
 }
 
 //MARK: - Protocol Methods
-extension StartScreenView: StartScreenViewProtocol {
+extension StartScreenViewController: StartScreenViewProtocol {
     func weatherDataFailure() {
         
     }
@@ -91,7 +91,7 @@ extension StartScreenView: StartScreenViewProtocol {
 }
 
 //MARK: - WeatherViewDelegate Methods
-extension StartScreenView: WeatherViewDelegate {
+extension StartScreenViewController: WeatherViewDelegate {
     func reloadButtonTap() {
         startScreenPresenter.getWeather()
     }

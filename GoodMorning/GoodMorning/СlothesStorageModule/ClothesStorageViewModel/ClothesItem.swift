@@ -28,15 +28,15 @@ extension ClothesItem {
         self.temperature = clothesDTO.temperature ?? ""
     }
 }
-
-struct MOClothesItemModel {
-    var name: String
-    
-    var color: String
-    
-    var type: Int16
-    
-    var picture: String
-    
-    var temperature: String
-}
+//
+//struct MOClothesItemModel {
+//    var name: String
+//    
+//    var color: String
+//    
+//    var type: Int16
+//    
+//    var picture: String
+//    
+//    var temperature: String
+//}

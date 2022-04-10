@@ -23,7 +23,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
     }
     
     private func createClothesStorageView(navigationTitle: String, navigationImage: UIImage?) -> UIViewController {
-        let view = СlothesStorageView()
+        let view = СlothesStorageViewController()
         let navController = createNavigationController(controller: view, title: navigationTitle, image: navigationImage)
         let router = Router(navigationController: navController, moduleBuilder: self)
         let coreData = CoreData()
@@ -34,7 +34,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
     
     private func createStartScreenView(navigationTitle: String, navigationImage: UIImage?) -> UIViewController {
         let locationManager = LocationManager()
-        let view = StartScreenView()
+        let view = StartScreenViewController()
         let networkService = NetworkService()
         let navController = createNavigationController(controller: view, title: navigationTitle, image: navigationImage)
         navController.title = "Home"

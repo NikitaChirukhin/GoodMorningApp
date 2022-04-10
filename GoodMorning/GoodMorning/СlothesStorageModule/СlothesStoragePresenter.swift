@@ -15,6 +15,8 @@ protocol СlothesStoragePresenterProtocol: AnyObject {
     func navigationAddButtonTap()
     func viewNeedNewData()
     func clothesItemBykey(key: Int) -> [ColletionClothesViewModel]
+    func deleteButtonTap(key: String)
+    func editButtonTap(key: String)
 }
 
 final class СlothesStoragePresenter {
@@ -38,12 +40,22 @@ private extension СlothesStoragePresenter {
 
 //MARK: - СlothesStoragePresenterProtocol methods
 extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
+    func deleteButtonTap(key: String) {
+        if let index = clothesStorageViewModel.firstIndex(where: {$0.name == key}) {
+            coreData.deleteItem(item: MOClothesItemModel(item: clothesStorageViewModel[index]))
+        }
+    }
+    
+    func editButtonTap(key: String) {
+        
+    }
+    
     func clothesItemBykey(key: Int) -> [ColletionClothesViewModel] {
         var viewModel: [ColletionClothesViewModel] = []
         for item in clothesStorageViewModel {
             if item.type == key {
-                if let indx = ClothesImageSetupViewModel.colors.firstIndex(where: {$0.colorName == item.color}) {
-                    viewModel.append(ColletionClothesViewModel(color: ClothesImageSetupViewModel.colors[indx].uiColor,
+                if let index = ClothesImageSetupViewModel.colors.firstIndex(where: {$0.colorName == item.color}) {
+                    viewModel.append(ColletionClothesViewModel(color: ClothesImageSetupViewModel.colors[index].uiColor,
                                                                name: item.name,
                                                                type: item.type))
                 }
@@ -59,9 +71,7 @@ extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
     func viewNeedNewData() {
         do {
             let data = try coreData.getItems()
-            for item in data {
-                clothesStorageViewModel.append(ClothesItem(with: item))
-            }
+        clothesStorageViewModel = data
         } catch let error {
             print(error)
         }

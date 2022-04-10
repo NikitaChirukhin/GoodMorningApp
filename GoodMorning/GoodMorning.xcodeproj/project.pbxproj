@@ -33,7 +33,7 @@
 		F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757B2800EABC002F58E0 /* ClothesItem.swift */; };
 		F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */; };
 		F55875862800EAD5002F58E0 /* СlothesStoragePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */; };
-		F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875892800EB12002F58E0 /* StartScreenView.swift */; };
+		F558758C2800EB12002F58E0 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875892800EB12002F58E0 /* StartScreenViewController.swift */; };
 		F558758D2800EB12002F58E0 /* WeatherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758A2800EB12002F58E0 /* WeatherImageView.swift */; };
 		F558758E2800EB12002F58E0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758B2800EB12002F58E0 /* WeatherView.swift */; };
 		F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */; };
@@ -46,6 +46,7 @@
 		F563C26228023D000024F8F0 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C26128023D000024F8F0 /* LoadImage.swift */; };
 		F563C26828031E8C0024F8F0 /* ColletionClothesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C26728031E8C0024F8F0 /* ColletionClothesViewModel.swift */; };
 		F563C26A28034B850024F8F0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C26928034B850024F8F0 /* UIColor+Extension.swift */; };
+		F563C26C28035E080024F8F0 /* MOClothesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C26B28035E080024F8F0 /* MOClothesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +78,7 @@
 		F558757B2800EABC002F58E0 /* ClothesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesItem.swift; sourceTree = "<group>"; };
 		F558757F2800EABC002F58E0 /* СlothesStorageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStorageViewModel.swift"; sourceTree = "<group>"; };
 		F55875852800EAD5002F58E0 /* СlothesStoragePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СlothesStoragePresenter.swift"; sourceTree = "<group>"; };
-		F55875892800EB12002F58E0 /* StartScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		F55875892800EB12002F58E0 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		F558758A2800EB12002F58E0 /* WeatherImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherImageView.swift; sourceTree = "<group>"; };
 		F558758B2800EB12002F58E0 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		F558758F2800EB19002F58E0 /* StartScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenPresenter.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		F563C26128023D000024F8F0 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 		F563C26728031E8C0024F8F0 /* ColletionClothesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColletionClothesViewModel.swift; sourceTree = "<group>"; };
 		F563C26928034B850024F8F0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F563C26B28035E080024F8F0 /* MOClothesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOClothesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,7 +236,7 @@
 		F55875882800EAEA002F58E0 /* StartScreenViewModule */ = {
 			isa = PBXGroup;
 			children = (
-				F55875892800EB12002F58E0 /* StartScreenView.swift */,
+				F55875892800EB12002F58E0 /* StartScreenViewController.swift */,
 				F563C26128023D000024F8F0 /* LoadImage.swift */,
 				F558758A2800EB12002F58E0 /* WeatherImageView.swift */,
 				F558758B2800EB12002F58E0 /* WeatherView.swift */,
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				F558759B2801794D002F58E0 /* CoreData.swift */,
+				F563C26B28035E080024F8F0 /* MOClothesModel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				F55875782800EA8D002F58E0 /* СlothesStorageViewController.swift in Sources */,
 				F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */,
 				F558758D2800EB12002F58E0 /* WeatherImageView.swift in Sources */,
+				F563C26C28035E080024F8F0 /* MOClothesModel.swift in Sources */,
 				F55875922800EB1E002F58E0 /* StartScreenViewModel.swift in Sources */,
 				F563C26828031E8C0024F8F0 /* ColletionClothesViewModel.swift in Sources */,
 				F558755A2800E9F4002F58E0 /* Array+Extension.swift in Sources */,
@@ -369,7 +373,7 @@
 				F55875412800E9A3002F58E0 /* GoodMorning.xcdatamodeld in Sources */,
 				F558759C2801794D002F58E0 /* CoreData.swift in Sources */,
 				F55875702800EA57002F58E0 /* ClotherSetupViewController.swift in Sources */,
-				F558758C2800EB12002F58E0 /* StartScreenView.swift in Sources */,
+				F558758C2800EB12002F58E0 /* StartScreenViewController.swift in Sources */,
 				F55875902800EB19002F58E0 /* StartScreenPresenter.swift in Sources */,
 				F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */,
 				F563C26A28034B850024F8F0 /* UIColor+Extension.swift in Sources */,

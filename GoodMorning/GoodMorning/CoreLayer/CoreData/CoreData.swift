@@ -53,14 +53,13 @@ extension CoreData: CoreDataProtocol {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        
         let deleteItem = MOClothesItem(context: managedContext)
         deleteItem.name = object.name
         deleteItem.temperature = object.temperature
         deleteItem.color = object.color
         deleteItem.type = object.type
         deleteItem.picture = object.picture
-        
+        print(deleteItem)
         managedContext.delete(deleteItem)
         
         do {

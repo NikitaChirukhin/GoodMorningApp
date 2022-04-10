@@ -13,18 +13,8 @@ protocol RouterProtocol {
 }
 
 final class Router {
-    
     private let navigationController: UINavigationController
     private let moduleBuilder: ModuleBuilder?
-
-    func pushClothesSetupModule(item: ClothesItem?) {
-        guard let clothesSetupView = moduleBuilder?.createClothesSetupModule(router: self, item: item) else { return }
-        navigationController.pushViewController(clothesSetupView, animated: true)
-    }
-    
-    func pop() {
-        navigationController.popViewController(animated: true)
-    }
     
     init(navigationController: UINavigationController, moduleBuilder: ModuleBuilder) {
         self.moduleBuilder = moduleBuilder
@@ -34,5 +24,12 @@ final class Router {
 
 //MARK: - RouterProtocol methods
 extension Router: RouterProtocol {
+    func pushClothesSetupModule(item: ClothesItem?) {
+        guard let clothesSetupView = moduleBuilder?.createClothesSetupModule(router: self, item: item) else { return }
+        navigationController.pushViewController(clothesSetupView, animated: true)
+    }
     
+    func pop() {
+        navigationController.popViewController(animated: true)
+    }
 }

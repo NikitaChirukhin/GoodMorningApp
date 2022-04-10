@@ -14,13 +14,3 @@ protocol ClothesStorageModelProtocol {
     var picture: String { get }
     var temperature: String { get }
 }
-
-struct СlothesStorageViewModel {
-    var headsModel: [ClothesItem]
-    
-    var torsModel: [ClothesItem]
-    
-    var pantsModel: [ClothesItem]
-    
-    var shoesModel: [ClothesItem]
-}

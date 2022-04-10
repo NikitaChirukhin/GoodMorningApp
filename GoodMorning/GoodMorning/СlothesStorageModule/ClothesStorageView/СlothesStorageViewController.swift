@@ -11,10 +11,12 @@ final class СlothesStorageViewController: UIViewController {
     
     var presenter: СlothesStoragePresenterProtocol!
     
+    private var randomAction: Int = 3
+    
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ClothesTableViewCell.self, forCellReuseIdentifier: ClothesTableViewCell.clotherTableViewIdentifier)
+        tableView.register(ClothesTableViewCell.self, forCellReuseIdentifier: ClothesTableViewCell.clothesTableViewIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .black
@@ -27,6 +29,16 @@ final class СlothesStorageViewController: UIViewController {
         navButton.image = UIImage(systemName: "plus")
         navButton.target = self
         navButton.action = #selector(addButtonTap)
+        navButton.tintColor = .white
+        return navButton
+    }()
+    
+    private lazy var navigationRandomButton: UIBarButtonItem = {
+        let navButton = UIBarButtonItem()
+        navButton.image = UIImage(systemName: "dice")
+        navButton.target = self
+        navButton.action = #selector(randomButtonTap)
+        navButton.tintColor = .white
         return navButton
     }()
     
@@ -38,6 +50,8 @@ final class СlothesStorageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        navigationController?.tabBarItem.badgeColor = .systemGray
+        navigationController?.navigationBar.barTintColor = .systemGray
         
         presenter.viewNeedNewData()
         
@@ -47,16 +61,16 @@ final class СlothesStorageViewController: UIViewController {
 
 //MARK: - СlothesStorageViewProtocol Methods
 extension СlothesStorageViewController: СlothesStorageViewProtocol {
-    func success() {
-        
-    }
+
 }
 
 //MARK: - СlothesStorageView private Methods
 private extension СlothesStorageViewController {
     func setupСlothesStorageView() {
         view.addSubview(mainTableView)
+        view.backgroundColor = .systemGray2
         
+        navigationItem.leftBarButtonItem = navigationRandomButton
         navigationItem.rightBarButtonItem = navigationAddButton
         
         NSLayoutConstraint.activate([
@@ -70,6 +84,10 @@ private extension СlothesStorageViewController {
     @objc func addButtonTap() {
         presenter.navigationAddButtonTap()
     }
+    @objc func randomButtonTap() {
+        randomAction = 0
+        mainTableView.reloadData()
+    }
 }
 
 //MARK: - clothresStorageCollectionView UITableViewDelegate
@@ -79,9 +97,13 @@ extension СlothesStorageViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ClothesTableViewCell.clotherTableViewIdentifier, for: indexPath) as? ClothesTableViewCell else { fatalError("Problem cell") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ClothesTableViewCell.clothesTableViewIdentifier, for: indexPath) as? ClothesTableViewCell else { fatalError("Problem cell") }
         cell.reloadData()
         cell.setData(data: presenter.clothesItemBykey(key: indexPath.row))
+        if randomAction != 4 {
+            cell.setRandomRaw()
+            randomAction += 1
+        }
         cell.delegate = self
         return cell
     }
@@ -91,7 +113,7 @@ extension СlothesStorageViewController: UITableViewDelegate, UITableViewDataSou
 }
 
 //MARK: - ClothesCollectionViewCell delegate methods
-extension СlothesStorageViewController: ClotherCollectionViewDelegate {
+extension СlothesStorageViewController: ClothesCollectionViewDelegate {
     func deleteButtonTap(key: String) {
         presenter.deleteButtonTap(key: key)
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoadImage: UIView {
+final class LoadImageView: UIView {
 
     private lazy var sunImage: UIImageView = {
         let imageView = UIImageView()
@@ -26,11 +26,10 @@ final class LoadImage: UIView {
     }
 }
     
-private extension LoadImage {
+private extension LoadImageView {
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(sunImage)
-        backgroundColor = .systemYellow
         
         NSLayoutConstraint.activate([
             sunImage.topAnchor.constraint(equalTo: topAnchor),

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol СlothesStorageViewProtocol: AnyObject {
-    func success()
+
 }
 
 protocol СlothesStoragePresenterProtocol: AnyObject {
@@ -44,6 +44,7 @@ extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
         if let index = clothesStorageViewModel.firstIndex(where: {$0.name == key}) {
             coreData.deleteItem(item: MOClothesItemModel(item: clothesStorageViewModel[index]))
         }
+        viewNeedNewData()
     }
     
     func editButtonTap(key: String) {
@@ -57,7 +58,8 @@ extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
                 if let index = ClothesImageSetupViewModel.colors.firstIndex(where: {$0.colorName == item.color}) {
                     viewModel.append(ColletionClothesViewModel(color: ClothesImageSetupViewModel.colors[index].uiColor,
                                                                name: item.name,
-                                                               type: item.type))
+                                                               type: item.type,
+                                                               temperature: String(item.temperature)))
                 }
             }
         }

@@ -7,20 +7,20 @@
 
 import UIKit
 
-protocol ClotherCollectionViewDelegate: AnyObject {
+protocol ClothesCollectionViewDelegate: AnyObject {
     func deleteButtonTap(key: String)
     func editButtonTap(key: String)
 }
 
 final class ClothesTableViewCell: UITableViewCell {
     
-    static let clotherTableViewIdentifier = "headTableViewIdentifier"
+    static let clothesTableViewIdentifier = "headTableViewIdentifier"
     
     private var currentCell = 0
     
     private var dataViewModel: [ColletionClothesViewModel] = []
     
-    weak var delegate: ClotherCollectionViewDelegate?
+    weak var delegate: ClothesCollectionViewDelegate?
     
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -29,11 +29,11 @@ final class ClothesTableViewCell: UITableViewCell {
         return layout
     }()
     
-    private lazy var headCollectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(ClotherCollectionViewCell.self,
-                                forCellWithReuseIdentifier: ClotherCollectionViewCell.collectionIdentifier)
+        collectionView.register(ClothesCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ClothesCollectionViewCell.collectionIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
@@ -74,27 +74,27 @@ final class ClothesTableViewCell: UITableViewCell {
 //MARK: HeadTableViewCell private methods
 private extension ClothesTableViewCell {
     func setupView() {
-        contentView.addSubview(headCollectionView)
+        contentView.addSubview(collectionView)
         contentView.addSubview(deleteButton)
         contentView.addSubview(editButton)
 
         selectionStyle = .none
         
         NSLayoutConstraint.activate([
-            headCollectionView.topAnchor.constraint(equalTo: topAnchor),
-            headCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            headCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            headCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            deleteButton.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
-            deleteButton.widthAnchor.constraint(equalToConstant: 20),
-            deleteButton.heightAnchor.constraint(equalToConstant: 20),
+            deleteButton.topAnchor.constraint(equalTo: topAnchor, constant: 13),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -13),
+            deleteButton.widthAnchor.constraint(equalToConstant: 40),
+            deleteButton.heightAnchor.constraint(equalToConstant: 40),
             
-            editButton.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            editButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
-            editButton.widthAnchor.constraint(equalToConstant: 20),
-            editButton.heightAnchor.constraint(equalToConstant: 20),
+            editButton.topAnchor.constraint(equalTo: topAnchor, constant: 13),
+            editButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 13),
+            editButton.widthAnchor.constraint(equalToConstant: 40),
+            editButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     @objc func deleteButtonTap() {
@@ -113,7 +113,7 @@ extension ClothesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClotherCollectionViewCell.collectionIdentifier, for: indexPath) as? ClotherCollectionViewCell else { return .init() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClothesCollectionViewCell.collectionIdentifier, for: indexPath) as? ClothesCollectionViewCell else { return .init() }
         cell.setData(viewData: dataViewModel[indexPath.row])
         return cell
     }
@@ -133,11 +133,18 @@ extension ClothesTableViewCell: UICollectionViewDelegateFlowLayout {
 extension ClothesTableViewCell {
     func setData(data: [ColletionClothesViewModel]) {
         dataViewModel = data
-        headCollectionView.reloadData()
+        collectionView.reloadData()
     }
     
     func reloadData() {
         dataViewModel = []
-        headCollectionView.reloadData()
+        collectionView.reloadData()
+    }
+    func setRandomRaw() {
+        if dataViewModel.count != 0 {
+            let randomNumber = Int.random(in: 0..<dataViewModel.count)
+            let indexPath = NSIndexPath(row: randomNumber, section: 0)
+            collectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredVertically, animated: true)
+        }
     }
 }

@@ -51,15 +51,17 @@ private extension WeatherImageView {
     func fewCloudsSetup() {
         weatherImage.image = UIImage(systemName: "cloud.sun.fill")
         weatherImage.tintColor = .gray
+        backgroundColor = .darkGray
     }
     
     func scatteredCloudsSetup() {
         weatherImage.image = UIImage(systemName: "cloud")
         weatherImage.tintColor = .gray
+        backgroundColor = .darkGray
     }
     
     func showerRainSetup() {
-        weatherImage.image = UIImage(systemName: "cloud.drizzle")
+        weatherImage.image = UIImage(systemName: "smoke")
         weatherImage.tintColor = .blue
     }
     
@@ -69,8 +71,9 @@ private extension WeatherImageView {
     }
     
     func brokekCloudsSetup() {
-        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.image = UIImage(systemName: "smoke")
         weatherImage.tintColor = .gray
+        backgroundColor = .darkGray
     }
     
     func thunderstormSetup() {
@@ -80,12 +83,14 @@ private extension WeatherImageView {
     
     func snowSetup() {
         weatherImage.image = UIImage(systemName: "snowflake")
-        weatherImage.tintColor = .white
+        weatherImage.tintColor = .lightGray
+        backgroundColor = .white
     }
     
     func mistSetup() {
         weatherImage.image = UIImage(systemName: "cloud.fog")
         weatherImage.tintColor = .lightGray
+        backgroundColor = .gray
     }
 }
 

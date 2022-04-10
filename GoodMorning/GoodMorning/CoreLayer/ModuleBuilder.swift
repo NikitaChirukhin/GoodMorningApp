@@ -62,7 +62,7 @@ extension ModuleBuilder {
     }
     
     func createClothesSetupModule(router: Router, item: ClothesItem?) -> UIViewController {
-        let view = ClotherSetupViewController()
+        let view = ClothesSetupViewController()
         let coreData = CoreData()
         let presenter = ClothesSetupPresenter(router: router, item: item, view: view, coreData: coreData)
         view.presenter = presenter

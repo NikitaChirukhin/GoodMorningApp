@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ClotherSetupViewModel: ClothesStorageModelProtocol {
+struct ClothesSetupViewModel: ClothesStorageModelProtocol {
     var name: String
     
     var color: String
@@ -19,7 +19,7 @@ struct ClotherSetupViewModel: ClothesStorageModelProtocol {
     var type: Int
 }
 
-extension ClotherSetupViewModel {
+extension ClothesSetupViewModel {
     init(item: ClothesStorageModelProtocol) {
         name = item.name
         color = item.color

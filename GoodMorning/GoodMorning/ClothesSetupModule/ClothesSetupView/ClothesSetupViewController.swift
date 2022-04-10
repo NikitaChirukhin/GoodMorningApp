@@ -1,5 +1,5 @@
 //
-//  ClotherSetupView.swift
+//  ClothesSetupView.swift
 //  Clothesline
 //
 //  Created by Никита Чирухин on 07.04.2022.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class ClotherSetupViewController: UIViewController {
+final class ClothesSetupViewController: UIViewController {
     
-    var presenter: ClotherSetupPresenterProtocol!
+    var presenter: ClothesSetupPresenterProtocol!
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -59,8 +59,8 @@ final class ClotherSetupViewController: UIViewController {
     }
 }
 
-//MARK: - ClotherSetupView private methods
-private extension ClotherSetupViewController {
+//MARK: - ClothesSetupView private methods
+private extension ClothesSetupViewController {
     func setupView() {
         
         view.backgroundColor = .systemBackground
@@ -110,8 +110,8 @@ private extension ClotherSetupViewController {
     }
 }
 
-//MARK: - ClotherSetupViewProtocol methods
-extension ClotherSetupViewController: ClothesSetupViewProtocol {
+//MARK: - ClothesSetupViewProtocol methods
+extension ClothesSetupViewController: ClothesSetupViewProtocol {
     func showAlert() {
         let alertController = UIAlertController(title: "Select all parametrs", message: "", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))

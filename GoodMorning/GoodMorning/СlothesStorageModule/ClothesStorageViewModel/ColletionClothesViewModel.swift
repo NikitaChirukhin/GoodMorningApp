@@ -12,4 +12,5 @@ struct ColletionClothesViewModel {
     var color: UIColor
     var name: String
     var type: Int
+    var temperature: String
 }

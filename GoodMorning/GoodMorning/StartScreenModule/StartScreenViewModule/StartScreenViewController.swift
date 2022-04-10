@@ -13,7 +13,7 @@ final class StartScreenViewController: UIViewController {
     
     private lazy var weatherView = WeatherView(weatherStatus: "Default")
     
-    private lazy var loadImage = LoadImage()
+    private lazy var loadImage = LoadImageView()
     
     private lazy var navigationCelsuisButton: UIBarButtonItem = {
         let navButton = UIBarButtonItem()
@@ -31,8 +31,8 @@ final class StartScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        tabBarItem.badgeColor = .clear
+        navigationController?.navigationBar.barTintColor = .clear
+        UITabBar.appearance().barTintColor = .clear
         
         startScreenPresenter.getWeather()
         setGradientBackground()

@@ -62,7 +62,6 @@ final class WeatherView: UIView {
     private lazy var temparatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "27°"
         label.textAlignment = .center
         label.textColor = .white
         label.font = .systemFont(ofSize: 66)
@@ -117,7 +116,6 @@ final class WeatherView: UIView {
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "City"
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 2

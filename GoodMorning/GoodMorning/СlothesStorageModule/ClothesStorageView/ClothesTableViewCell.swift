@@ -13,6 +13,7 @@ final class ClothesTableViewCell: UITableViewCell {
     
     private var currentCell = 0
     private let screenWidth = UIScreen.main.bounds.width
+    private var dataViewModel: [ColletionClothesViewModel] = []
     
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -35,13 +36,6 @@ final class ClothesTableViewCell: UITableViewCell {
         return collectionView
     }()
     
-    private lazy var pageController: UIPageControl = {
-        let pageController = UIPageControl()
-        pageController.translatesAutoresizingMaskIntoConstraints = false
-        pageController.currentPage = 0
-        return pageController
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -57,7 +51,7 @@ final class ClothesTableViewCell: UITableViewCell {
 private extension ClothesTableViewCell {
     func setupView() {
         contentView.addSubview(headCollectionView)
-        contentView.addSubview(pageController)
+
 
         selectionStyle = .none
         
@@ -66,31 +60,20 @@ private extension ClothesTableViewCell {
             headCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             headCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            pageController.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            pageController.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            pageController.heightAnchor.constraint(equalToConstant: 30),
-            pageController.bottomAnchor.constraint(equalTo: bottomAnchor),
-
         ])
-    }
-    @objc func slideCollectionView() {
-        let indexPath = NSIndexPath(row: 3, section: 0)
-        headCollectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredVertically, animated: true)
     }
 }
 
 //MARK: - headCollectionView Delegate and DataSource methods
 extension ClothesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let pages = 15
-        pageController.numberOfPages = pages
-        return pages
+        dataViewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ClotherCollectionViewCell.collectionIdentifier, for: indexPath) as? ClotherCollectionViewCell else { return .init() }
         cell.delegate = self
+        cell.setData(viewData: dataViewModel[indexPath.row])
         return cell
     }
     
@@ -98,7 +81,7 @@ extension ClothesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension ClothesTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 120)
+        return CGSize(width: .screenWidth, height: .screenWidth - 100)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -107,14 +90,12 @@ extension ClothesTableViewCell: UICollectionViewDelegateFlowLayout {
         } else {
             currentCell -= 1
         }
-        print("2 \(scrollView.contentOffset.x)")
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         if CGFloat(currentCell) * screenWidth < scrollView.contentOffset.x {
             currentCell += 1
         }
-        print("1 \(scrollView.contentOffset.x)")
     }
 }
 
@@ -132,5 +113,11 @@ extension ClothesTableViewCell: ClotherCollectionViewCellDelegate {
         let indexPath = NSIndexPath(row: currentCell, section: 0)
         headCollectionView.scrollToItem(at: indexPath as IndexPath, at: .centeredVertically, animated: true)
         print(currentCell)
+    }
+}
+
+extension ClothesTableViewCell {
+    func setData(data: [ColletionClothesViewModel]) {
+        dataViewModel = data
     }
 }

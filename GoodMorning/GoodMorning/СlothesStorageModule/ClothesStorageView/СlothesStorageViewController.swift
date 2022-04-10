@@ -17,8 +17,8 @@ final class СlothesStorageView: UIViewController {
         tableView.register(ClothesTableViewCell.self, forCellReuseIdentifier: ClothesTableViewCell.clotherTableViewIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isScrollEnabled = false
-        tableView.separatorColor = UIColor.clear
+        tableView.separatorColor = .black
+        tableView.backgroundColor = .systemGray2
         return tableView
     }()
     
@@ -35,19 +35,27 @@ final class СlothesStorageView: UIViewController {
         
         setupСlothesStorageView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        presenter.viewNeedNewData()
+        
+        mainTableView.reloadData()
+    }
 }
 
 //MARK: - СlothesStorageViewProtocol Methods
 extension СlothesStorageView: СlothesStorageViewProtocol {
-    
+    func success() {
+        
+    }
 }
 
 //MARK: - СlothesStorageView private Methods
 private extension СlothesStorageView {
     func setupСlothesStorageView() {
         view.addSubview(mainTableView)
-        
-        view.backgroundColor = .systemBackground
         
         navigationItem.rightBarButtonItem = navigationAddButton
         
@@ -72,9 +80,10 @@ extension СlothesStorageView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ClothesTableViewCell.clotherTableViewIdentifier, for: indexPath) as? ClothesTableViewCell else { fatalError("Problem cell") }
+        cell.setData(data: presenter.clothesItemBykey(key: indexPath.row))
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UIScreen.main.bounds.height / 5 
+        .screenWidth - 80
     }
 }

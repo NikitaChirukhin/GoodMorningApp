@@ -45,38 +45,47 @@ private extension WeatherImageView {
     
     func clearSkySetup() {
         weatherImage.image = UIImage(systemName: "sun.max")
+        weatherImage.tintColor = .systemYellow
     }
     
     func fewCloudsSetup() {
         weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.tintColor = .gray
     }
     
     func scatteredCloudsSetup() {
         weatherImage.image = UIImage(systemName: "cloud")
+        weatherImage.tintColor = .gray
     }
     
     func showerRainSetup() {
         weatherImage.image = UIImage(systemName: "cloud.drizzle")
+        weatherImage.tintColor = .blue
     }
     
     func rainSetup() {
         weatherImage.image = UIImage(systemName: "cloud.heavyrain")
+        weatherImage.tintColor = .blue
     }
     
     func brokekCloudsSetup() {
         weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.tintColor = .gray
     }
     
     func thunderstormSetup() {
-        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.image = UIImage(systemName: "cloud.bolt.rain")
+        weatherImage.tintColor = .blue
     }
     
     func snowSetup() {
-        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.image = UIImage(systemName: "snowflake")
+        weatherImage.tintColor = .white
     }
     
     func mistSetup() {
-        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+        weatherImage.image = UIImage(systemName: "cloud.fog")
+        weatherImage.tintColor = .lightGray
     }
 }
 

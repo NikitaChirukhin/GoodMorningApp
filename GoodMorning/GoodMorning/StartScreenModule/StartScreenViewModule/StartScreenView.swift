@@ -32,6 +32,8 @@ final class StartScreenView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        tabBarItem.badgeColor = .clear
+        
         startScreenPresenter.getWeather()
         setGradientBackground()
     }

@@ -24,7 +24,7 @@ final class ClothesSetupPresenter {
     private weak var clothesSetupView: ClothesSetupViewProtocol?
     private let router: RouterProtocol
     private var clothesViewModel: ClotherSetupViewModel
-    private let coreData: CoreData
+    private let coreData: CoreDataProtocol
     
     init(router: Router, item: ClothesStorageModelProtocol?, view: ClothesSetupViewProtocol, coreData: CoreData) {
         self.clothesSetupView = view

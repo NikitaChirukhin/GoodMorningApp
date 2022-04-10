@@ -20,12 +20,12 @@ struct ClothesItem: ClothesStorageModelProtocol {
 }
 
 extension ClothesItem {
-    init(with clothesDTO: MOClothesItemModel) {
-        self.name = clothesDTO.name
-        self.color = clothesDTO.color
+    init(with clothesDTO: MOClothesItem) {
+        self.name = clothesDTO.name ?? ""
+        self.color = clothesDTO.color ?? ""
         self.type = Int(clothesDTO.type)
-        self.picture = clothesDTO.picture
-        self.temperature = clothesDTO.temperature
+        self.picture = clothesDTO.picture ?? ""
+        self.temperature = clothesDTO.temperature ?? ""
     }
 }
 

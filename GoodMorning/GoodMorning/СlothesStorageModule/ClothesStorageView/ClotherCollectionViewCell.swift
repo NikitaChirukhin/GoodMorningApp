@@ -18,29 +18,34 @@ final class ClotherCollectionViewCell: UICollectionViewCell {
     
     static let collectionIdentifier = "HeadCollectionIdentifier"
     
-    private let screenWidth: CGFloat = UIScreen.main.bounds.width
-    
     private lazy var image: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "trash")
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .brown
+        image.layer.cornerRadius = 20
         return image
     }()
     
-    private lazy var scrollLeftButton: UIButton = {
+    private lazy var clothesName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.addTarget(self, action: #selector(leftScrollButtonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(deleteButtonTap), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
+        button.tintColor = .red
         return button
     }()
     
-    private lazy var scrollRightButton: UIButton = {
+    private lazy var editButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.addTarget(self, action: #selector(rightScrollButtonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(editButtonTap), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "pencil.circle"), for: .normal)
         return button
     }()
     
@@ -57,32 +62,48 @@ final class ClotherCollectionViewCell: UICollectionViewCell {
 //MARK: - HeadCollectionCellInsideTableViewCell private methods
 private extension ClotherCollectionViewCell {
     func setupView() {
-        
-        contentView.addSubview(scrollLeftButton)
-        contentView.addSubview(scrollRightButton)
+        layer.cornerRadius = 5
+
         contentView.addSubview(image)
+        contentView.addSubview(clothesName)
+        contentView.addSubview(deleteButton)
+        contentView.addSubview(editButton)
         
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: topAnchor),
-            image.centerXAnchor.constraint(equalTo: centerXAnchor),
-            image.widthAnchor.constraint(equalToConstant: screenWidth / 2),
-            image.bottomAnchor.constraint(equalTo: bottomAnchor),
+            image.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            image.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  .screenWidth / 4),
+            image.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -(.screenWidth / 4)),
+            image.heightAnchor.constraint(equalToConstant: .screenWidth - 130),
             
-            scrollLeftButton.topAnchor.constraint(equalTo: topAnchor),
-            scrollLeftButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollLeftButton.trailingAnchor.constraint(equalTo: image.leadingAnchor),
-            scrollLeftButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            clothesName.topAnchor.constraint(equalTo: image.topAnchor, constant: -23),
+            clothesName.leadingAnchor.constraint(equalTo: leadingAnchor),
+            clothesName.trailingAnchor.constraint(equalTo: trailingAnchor),
+            clothesName.heightAnchor.constraint(equalToConstant: 15),
             
-            scrollRightButton.topAnchor.constraint(equalTo: topAnchor),
-            scrollRightButton.leadingAnchor.constraint(equalTo: image.trailingAnchor),
-            scrollRightButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollRightButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            deleteButton.topAnchor.constraint(equalTo: image.topAnchor, constant: 4),
+            deleteButton.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: -4),
+            deleteButton.widthAnchor.constraint(equalToConstant: 20),
+            deleteButton.heightAnchor.constraint(equalToConstant: 20),
+            
+            editButton.topAnchor.constraint(equalTo: image.topAnchor, constant: 4),
+            editButton.leadingAnchor.constraint(equalTo: image.leadingAnchor, constant: 4),
+            editButton.widthAnchor.constraint(equalToConstant: 20),
+            editButton.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
-    @objc func leftScrollButtonTap() {
-        delegate?.leftScrollButtonTap()
+    @objc func deleteButtonTap() {
+        
     }
-    @objc func rightScrollButtonTap(){
-        delegate?.rigthScrollButtonTap()
+    
+    @objc func editButtonTap() {
+        
+    }
+}
+
+extension ClotherCollectionViewCell {
+    func setData(viewData: ColletionClothesViewModel) {
+        image.backgroundColor = viewData.color
+        clothesName.text = viewData.name
+        image.image = UIImage(named: ClothesImageSetupViewModel.clotherPickViewNames[viewData.type])
     }
 }

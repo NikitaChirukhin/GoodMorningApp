@@ -51,6 +51,12 @@ final class ClotherSetupViewController: UIViewController {
     
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 }
 
 //MARK: - ClotherSetupView private methods
@@ -99,11 +105,22 @@ private extension ClotherSetupViewController {
     }
     
     @objc func saveButtonTap() {
-        
+        let data = clothesImageSetupView.getData()
+        presenter.saveButtonTap(color: data.color, name: nameTextField.text, temperature: data.temperature, type: data.type)
     }
 }
 
 //MARK: - ClotherSetupViewProtocol methods
 extension ClotherSetupViewController: ClothesSetupViewProtocol {
+    func showAlert() {
+        let alertController = UIAlertController(title: "Select all parametrs", message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        self.present(alertController, animated: true, completion: nil)
+    }
     
+    func setParametrsIfNeeded() {
+        clothesImageSetupView.setData(color: presenter.setColor(),
+                                      temperature: presenter.setTemperature(),
+                                      type: presenter.setType())
+    }
 }

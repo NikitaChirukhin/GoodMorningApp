@@ -13,6 +13,8 @@ final class StartScreenView: UIViewController {
     
     private lazy var weatherView = WeatherView(weatherStatus: "Default")
     
+    private lazy var loadImage = LoadImage()
+    
     private lazy var navigationCelsuisButton: UIBarButtonItem = {
         let navButton = UIBarButtonItem()
         navButton.title = "°C"
@@ -23,14 +25,15 @@ final class StartScreenView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setGradientBackground()
-        
+
         setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         startScreenPresenter.getWeather()
+        setGradientBackground()
     }
 }
 
@@ -38,12 +41,17 @@ final class StartScreenView: UIViewController {
 private extension StartScreenView {
     func setupView() {
         weatherView.delegate = self
-        
         navigationItem.rightBarButtonItem = navigationCelsuisButton
-        
+
         view.addSubview(weatherView)
+        view.addSubview(loadImage)
         
         NSLayoutConstraint.activate([
+            loadImage.topAnchor.constraint(equalTo: view.topAnchor),
+            loadImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             weatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             weatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -72,6 +80,11 @@ extension StartScreenView: StartScreenViewProtocol {
     
     func weatherDataSuccess(data: StartScreenViewModel) {
         weatherView.setWeather(data: data)
+        UIView.transition(with: loadImage, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.loadImage.isHidden = true
+        })
     }
 }
 

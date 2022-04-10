@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModuleBuilderProtocol: AnyObject {
     func createTabBar() -> UITabBarController
-    func createClothesSetupModule(router: Router, item: ClothesItem) -> UIViewController
+    func createClothesSetupModule(router: Router, item: ClothesItem?) -> UIViewController
 }
 
 final class ModuleBuilder: ModuleBuilderProtocol {
@@ -61,9 +61,9 @@ extension ModuleBuilder {
         return tabBarController
     }
     
-    func createClothesSetupModule(router: Router, item: ClothesItem) -> UIViewController {
+    func createClothesSetupModule(router: Router, item: ClothesItem?) -> UIViewController {
         let view = ClotherSetupViewController()
-        let presenter = ClotherSetupPresenter(router: router, item: item, view: view)
+        let presenter = ClothesSetupPresenter(router: router, item: item, view: view)
         view.presenter = presenter
         return view
     }

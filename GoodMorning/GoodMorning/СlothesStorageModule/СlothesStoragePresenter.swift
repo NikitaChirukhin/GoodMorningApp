@@ -37,6 +37,6 @@ private extension СlothesStoragePresenter {
 //MARK: - СlothesStoragePresenterProtocol methods
 extension СlothesStoragePresenter: СlothesStoragePresenterProtocol {
     func navigationAddButtonTap() {
-        router.pushClothesSetupModule(item: ClothesItem(name: "", color: "Green", type: 1, picture: "hat", temperature: "-23"))
+        router.pushClothesSetupModule(item: nil)
     }
 }

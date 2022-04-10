@@ -39,7 +39,6 @@ final class StartScreenPresenter {
 private extension StartScreenPresenter {
     func setupLocationManager() {
         locationManager.accessStatus()
-        print("Nikita")
     }
     
     func getWeatherData(longitudeAtribute: String, latitudeAtribute: String) {
@@ -54,7 +53,6 @@ private extension StartScreenPresenter {
                     self.startScreenView?.weatherDataSuccess(data: viewData)
                 case .failure(let error):
                     print(error)
-                    self.startScreenView?.weatherDataFailure()
                 }
             }
         })
@@ -65,14 +63,15 @@ private extension StartScreenPresenter {
 //MARK: - StartScreenPresenterProtocol methods
 extension StartScreenPresenter: StartScreenPresenterProtocol {
     func getWeather() {
-        do {
-            let location = try self.locationManager.findLocation()
-            self.getWeatherData(longitudeAtribute: location.longitudeAtribute, latitudeAtribute: location.latitudeAtribute)
-        }
-        catch {
-            print(error)
+        //wait view to setup
+        DispatchQueue.main.async {
+            do {
+                let location = try self.locationManager.findLocation()
+                self.getWeatherData(longitudeAtribute: location.longitudeAtribute, latitudeAtribute: location.latitudeAtribute)
+            } catch {
+                print(error)
+            }
         }
     }
-    
 }
 

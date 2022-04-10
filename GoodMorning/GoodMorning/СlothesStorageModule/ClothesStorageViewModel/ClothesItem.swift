@@ -10,7 +10,7 @@ import Foundation
 struct ClothesItem: ClothesStorageModelProtocol {
     var name: String
     
-    var color: String?
+    var color: String
     
     var type: Int
     

@@ -24,7 +24,7 @@
 		F55875662800EA37002F58E0 /* NetworkCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875622800EA37002F58E0 /* NetworkCore.swift */; };
 		F55875672800EA37002F58E0 /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875632800EA37002F58E0 /* DataConverter.swift */; };
 		F55875682800EA37002F58E0 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55875642800EA37002F58E0 /* ModuleBuilder.swift */; };
-		F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */; };
+		F558756E2800EA57002F58E0 /* ClothesSetupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756A2800EA56002F58E0 /* ClothesSetupPresenter.swift */; };
 		F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756B2800EA57002F58E0 /* ClothesPickView.swift */; };
 		F55875702800EA57002F58E0 /* ClotherSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */; };
 		F55875712800EA57002F58E0 /* ClotherSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */; };
@@ -44,6 +44,7 @@
 		F563C25C2801F1040024F8F0 /* ClothesImageSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25B2801F1040024F8F0 /* ClothesImageSetupView.swift */; };
 		F563C25E2801F2710024F8F0 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25D2801F2710024F8F0 /* CGFloat+Extension.swift */; };
 		F563C2602801FDD50024F8F0 /* ClothesImageSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C25F2801FDD50024F8F0 /* ClothesImageSetupViewModel.swift */; };
+		F563C26228023D000024F8F0 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563C26128023D000024F8F0 /* LoadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +67,7 @@
 		F55875622800EA37002F58E0 /* NetworkCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCore.swift; sourceTree = "<group>"; };
 		F55875632800EA37002F58E0 /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		F55875642800EA37002F58E0 /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
-		F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupPresenter.swift; sourceTree = "<group>"; };
+		F558756A2800EA56002F58E0 /* ClothesSetupPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesSetupPresenter.swift; sourceTree = "<group>"; };
 		F558756B2800EA57002F58E0 /* ClothesPickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClothesPickView.swift; sourceTree = "<group>"; };
 		F558756C2800EA57002F58E0 /* ClotherSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupViewController.swift; sourceTree = "<group>"; };
 		F558756D2800EA57002F58E0 /* ClotherSetupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClotherSetupViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		F563C25B2801F1040024F8F0 /* ClothesImageSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageSetupView.swift; sourceTree = "<group>"; };
 		F563C25D2801F2710024F8F0 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		F563C25F2801FDD50024F8F0 /* ClothesImageSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesImageSetupViewModel.swift; sourceTree = "<group>"; };
+		F563C26128023D000024F8F0 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +182,7 @@
 		F55875692800EA46002F58E0 /* ClothesSetupModule */ = {
 			isa = PBXGroup;
 			children = (
-				F558756A2800EA56002F58E0 /* ClotherSetupPresenter.swift */,
+				F558756A2800EA56002F58E0 /* ClothesSetupPresenter.swift */,
 				F55875A02801A214002F58E0 /* ClothesSetupView */,
 				F558759F2801A1FB002F58E0 /* ClotherSetupViewModel */,
 			);
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				F55875892800EB12002F58E0 /* StartScreenView.swift */,
+				F563C26128023D000024F8F0 /* LoadImage.swift */,
 				F558758A2800EB12002F58E0 /* WeatherImageView.swift */,
 				F558758B2800EB12002F58E0 /* WeatherView.swift */,
 			);
@@ -335,7 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F558756F2800EA57002F58E0 /* ClothesPickView.swift in Sources */,
-				F558756E2800EA57002F58E0 /* ClotherSetupPresenter.swift in Sources */,
+				F558756E2800EA57002F58E0 /* ClothesSetupPresenter.swift in Sources */,
 				F55875582800E9F4002F58E0 /* UIFont+Extension.swift in Sources */,
 				F55875522800E9DA002F58E0 /* WeatherRawDataModel.swift in Sources */,
 				F55875372800E9A3002F58E0 /* AppDelegate.swift in Sources */,
@@ -367,6 +370,7 @@
 				F55875792800EA8D002F58E0 /* ClothesTableViewCell.swift in Sources */,
 				F55875802800EABC002F58E0 /* ClothesItem.swift in Sources */,
 				F55875592800E9F4002F58E0 /* UIColor+Extension.swift in Sources */,
+				F563C26228023D000024F8F0 /* LoadImage.swift in Sources */,
 				F55875842800EABC002F58E0 /* СlothesStorageViewModel.swift in Sources */,
 				F563C2602801FDD50024F8F0 /* ClothesImageSetupViewModel.swift in Sources */,
 			);

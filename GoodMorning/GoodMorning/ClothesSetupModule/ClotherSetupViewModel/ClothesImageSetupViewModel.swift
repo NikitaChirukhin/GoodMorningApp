@@ -8,7 +8,7 @@
 import Foundation
 
 struct ClothesImageSetupViewModel {
-    let clotherPickViewNames = ["hat", "coat", "pant", "shoe"]
+    static let clotherPickViewNames = ["hat", "coat", "pant", "shoe"]
     let colors: [ColorPickerViewModel] = [ColorPickerViewModel(colorName: "Clear", uiColor: .clear),
                                           ColorPickerViewModel(colorName: "Gray", uiColor: .gray),
                                           ColorPickerViewModel(colorName: "Red", uiColor: .red),

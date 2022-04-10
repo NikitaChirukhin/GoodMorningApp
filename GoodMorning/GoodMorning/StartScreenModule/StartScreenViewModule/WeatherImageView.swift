@@ -15,31 +15,9 @@ final class WeatherImageView: UIView {
         return imageView
     }()
     
-    init(imageStyle: String) {
+    init() {
         super.init(frame: .zero)
-        switch imageStyle {
-        case "clear sky":
-            self.clearSkySetup()
-        case "few clouds":
-            self.fewCloudsSetup()
-        case "scattered clouds":
-            self.scatteredCloudsSetup()
-        case "broken clouds":
-            self.brokekCloudsSetup()
-        case "shower rain":
-            self.showerRainSetup()
-        case "rain":
-            self.rainSetup()
-        case "thunderstorm":
-            self.thunderstormSetup()
-        case "snow":
-            self.snowSetup()
-        case "mist":
-            self.mistSetup()
-        default:
-            print("Unknown WeatherImageError")
-        }
-        
+
         setupView()
     }
     
@@ -74,30 +52,57 @@ private extension WeatherImageView {
     }
     
     func scatteredCloudsSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud")
     }
     
     func showerRainSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.drizzle")
     }
     
     func rainSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.heavyrain")
     }
     
     func brokekCloudsSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
     }
     
     func thunderstormSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
     }
     
     func snowSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
     }
     
     func mistSetup() {
-        
+        weatherImage.image = UIImage(systemName: "cloud.sun.fill")
+    }
+}
+
+extension WeatherImageView {
+    func setWeather(key: String) {
+        switch key {
+        case "clear sky":
+            self.clearSkySetup()
+        case "few clouds":
+            self.fewCloudsSetup()
+        case "scattered clouds":
+            self.scatteredCloudsSetup()
+        case "broken clouds":
+            self.brokekCloudsSetup()
+        case "shower rain":
+            self.showerRainSetup()
+        case "rain":
+            self.rainSetup()
+        case "thunderstorm":
+            self.thunderstormSetup()
+        case "snow":
+            self.snowSetup()
+        case "mist":
+            self.mistSetup()
+        default:
+            print("Unknown WeatherImageError")
+        }
     }
 }

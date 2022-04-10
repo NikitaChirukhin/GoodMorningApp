@@ -19,13 +19,24 @@ struct ClothesItem: ClothesStorageModelProtocol {
     var temperature: String
 }
 
-//extension ClothesHeads {
-//    init(with clothesDTO: MOClothesHeads) {
-//        self.name = clothesDTO.name ?? ""
-//        self.color = clothesDTO.color ?? ""
-//        self.type = Int(clothesDTO.type)
-//        self.headType = clothesDTO.headType ?? ""
-//        self.picture = clothesDTO.picture ?? ""
-//        self.temperature = clothesDTO.temperature ?? ""
-//    }
-//}
+extension ClothesItem {
+    init(with clothesDTO: MOClothesItemModel) {
+        self.name = clothesDTO.name
+        self.color = clothesDTO.color
+        self.type = Int(clothesDTO.type)
+        self.picture = clothesDTO.picture
+        self.temperature = clothesDTO.temperature
+    }
+}
+
+struct MOClothesItemModel {
+    var name: String
+    
+    var color: String
+    
+    var type: Int16
+    
+    var picture: String
+    
+    var temperature: String
+}

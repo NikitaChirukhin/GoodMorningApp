@@ -20,18 +20,28 @@ final class СlothesStoragePresenter {
     private weak var clothesStorageView: СlothesStorageViewProtocol?
     private let router: RouterProtocol
 //    private var clothesStorageViewModel: СlothesStorageViewModel
-//    private var
+    private var coreData: CoreData
     
     init(view: СlothesStorageViewProtocol, router: RouterProtocol, coreData: CoreData) {
         self.router = router
         self.clothesStorageView = view
-//        self.clothesStorageViewModel =
+        self.coreData = coreData
+        
+        getAllItem()
     }
 }
 
 //MARK: - ClothesStoragePresenter private methods
 private extension СlothesStoragePresenter {
-    
+    func getAllItem() {
+        
+        do {
+            let data = try coreData.getItems()
+            print("Items: \(data)")
+        } catch let error {
+            print(error)
+        }
+    }
 }
 
 //MARK: - СlothesStoragePresenterProtocol methods

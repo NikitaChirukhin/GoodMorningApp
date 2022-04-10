@@ -17,7 +17,7 @@ final class WeatherView: UIView {
     
     private let screenWidth = UIScreen.main.bounds.width
     
-    private lazy var weatherImage = WeatherImageView(imageStyle:"Cloudy")
+    private lazy var weatherImage = WeatherImageView()
     
     private lazy var reloadButton: UIButton = {
         let button = UIButton()
@@ -127,7 +127,7 @@ final class WeatherView: UIView {
     
     init(weatherStatus: String) {
         super.init(frame: .zero)
-        
+
         setupView()
     }
     
@@ -195,5 +195,6 @@ extension WeatherView {
         temparatureMaxLabel.text = data.temperatureMax
         temparatureMinLabel.text = data.temperatureMin
         temperatureFeelsLikeWeather.text = "Feels like \(data.temperatureFeelLike)"
+        weatherImage.setWeather(key: data.actualWeather)
     }
 }

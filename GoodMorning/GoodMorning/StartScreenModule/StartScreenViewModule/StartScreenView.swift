@@ -80,10 +80,10 @@ extension StartScreenView: StartScreenViewProtocol {
     
     func weatherDataSuccess(data: StartScreenViewModel) {
         weatherView.setWeather(data: data)
-        UIView.transition(with: loadImage, duration: 0.4,
+        UIView.transition(with: loadImage, duration: 1.5,
                           options: .transitionCrossDissolve,
                           animations: {
-            self.loadImage.isHidden = true
+            self.loadImage.alpha = 0
         })
     }
 }

@@ -24,10 +24,12 @@ final class ClothesSetupPresenter {
     private weak var clothesSetupView: ClothesSetupViewProtocol?
     private let router: RouterProtocol
     private var clothesViewModel: ClotherSetupViewModel
+    private let coreData: CoreData
     
-    init(router: Router, item: ClothesStorageModelProtocol?, view: ClothesSetupViewProtocol) {
+    init(router: Router, item: ClothesStorageModelProtocol?, view: ClothesSetupViewProtocol, coreData: CoreData) {
         self.clothesSetupView = view
         self.router = router
+        self.coreData = coreData
         if let item = item {
             self.clothesViewModel = ClotherSetupViewModel(item: item)
         } else {
@@ -45,6 +47,11 @@ extension ClothesSetupPresenter: ClotherSetupPresenterProtocol {
     func saveButtonTap(color: String, name: String?, temperature: String?, type: Int?) {
         if let temperature = temperature, let type = type, let name = name {
             print("\(temperature) \(type) \(name) \(color)")
+            coreData.save(object: MOClothesItemModel(name: name,
+                                              color: color,
+                                              type: Int16(type),
+                                              picture: ClothesImageSetupViewModel.clotherPickViewNames[type],
+                                              temperature: temperature))
             router.pop()
         } else {
             clothesSetupView?.showAlert()

@@ -14,6 +14,7 @@ struct ClothesImageSetupViewModel {
                                                  ColorPickerViewModel(colorName: "Brown", uiColor: .brown),
                                                  ColorPickerViewModel(colorName: "Yellow", uiColor: .yellow),
                                                  ColorPickerViewModel(colorName: "Blue", uiColor: .blue),
-                                                 ColorPickerViewModel(colorName: "Green", uiColor: .green)]
+                                                 ColorPickerViewModel(colorName: "Green", uiColor: .green),
+                                                 ColorPickerViewModel(colorName: "Orange", uiColor: .orange)]
     let temperatureRange: [Int] = Array(-35...35)
 }

@@ -57,6 +57,7 @@ extension ClothesSetupPresenter: ClothesSetupPresenterProtocol {
             clothesSetupView?.showAlert()
         }
     }
+    
     func setColor() -> String {
         clothesViewModel.color
     }

@@ -31,7 +31,7 @@ private extension WeatherImageView {
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 253.0/255.0, green: 233.0/255.0, blue: 16.0/255.0, alpha: 0.1)
-        layer.cornerRadius = UIScreen.main.bounds.width / 2
+        layer.cornerRadius = .screenWidth / 2
         
         addSubview(weatherImage)
         
@@ -109,6 +109,8 @@ extension WeatherImageView {
             self.showerRainSetup()
         case "rain":
             self.rainSetup()
+        case "overcast clouds":
+            self.brokekCloudsSetup()
         case "thunderstorm":
             self.thunderstormSetup()
         case "snow":

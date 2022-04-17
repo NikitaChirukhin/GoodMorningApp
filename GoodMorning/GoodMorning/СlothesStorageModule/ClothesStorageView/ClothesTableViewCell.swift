@@ -30,14 +30,15 @@ final class ClothesTableViewCell: UITableViewCell {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero,
+                                              collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ClothesCollectionViewCell.self,
                                 forCellWithReuseIdentifier: ClothesCollectionViewCell.collectionIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.alwaysBounceVertical = true
+        collectionView.alwaysBounceVertical = false
         collectionView.isScrollEnabled = true
         collectionView.isPagingEnabled = true
         return collectionView

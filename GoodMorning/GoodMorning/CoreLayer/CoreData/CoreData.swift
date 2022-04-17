@@ -59,7 +59,7 @@ extension CoreData: CoreDataProtocol {
         deleteItem.color = object.color
         deleteItem.type = object.type
         deleteItem.picture = object.picture
-        print(deleteItem)
+        
         managedContext.delete(deleteItem)
         
         do {

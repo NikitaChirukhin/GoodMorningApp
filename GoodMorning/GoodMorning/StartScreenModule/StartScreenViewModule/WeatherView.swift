@@ -168,10 +168,10 @@ private extension WeatherView {
             cityLabel.trailingAnchor.constraint(equalTo: weatherImage.leadingAnchor, constant: -20),
             cityLabel.bottomAnchor.constraint(equalTo: temparatureLabel.topAnchor, constant: -20),
             
-            stackStatusFeelsWeather.topAnchor.constraint(equalTo: stackOfTemparatureMinMax.bottomAnchor, constant: 30),
+            stackStatusFeelsWeather.topAnchor.constraint(equalTo: stackOfTemparatureMinMax.bottomAnchor, constant: 7),
             stackStatusFeelsWeather.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackStatusFeelsWeather.trailingAnchor.constraint(equalTo: weatherImage.leadingAnchor),
-            stackStatusFeelsWeather.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -(UIScreen.main.bounds.height / 4) + 35),
+            stackStatusFeelsWeather.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -(.screenHeigth / 4) + 20),
             
             reloadButton.heightAnchor.constraint(equalToConstant: 55),
             reloadButton.widthAnchor.constraint(equalToConstant: 55),

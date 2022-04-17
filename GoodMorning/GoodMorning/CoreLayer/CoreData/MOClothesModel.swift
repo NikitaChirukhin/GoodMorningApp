@@ -9,13 +9,9 @@ import Foundation
 
 struct MOClothesItemModel {
     var name: String
-    
     var color: String
-    
     var type: Int16
-    
     var picture: String
-    
     var temperature: String
 }
 

@@ -7,11 +7,9 @@
 
 import UIKit
 
-//Question: - Где правильно писать протокол для вью? (В ней самой или ее пресентере)
 protocol StartScreenViewProtocol: AnyObject {
     func weatherDataFailure()
     func weatherDataSuccess(data: StartScreenViewModel)
-    
 }
 
 protocol StartScreenPresenterProtocol {
